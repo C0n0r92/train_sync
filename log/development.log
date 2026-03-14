@@ -582,3 +582,8 @@ FOREIGN KEY ("coach_id")
   [1m[36mQrCode Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "qr_codes" WHERE "qr_codes"."short_id" = 'abc123' LIMIT 1 /*application='TrainSync'*/[0m
   [1m[36mQrCode Create (0.7ms)[0m  [1m[32mINSERT INTO "qr_codes" ("workout_id", "short_id", "variant", "expires_at", "created_at", "updated_at") VALUES (1, 'abc123', 0, NULL, '2026-03-14 00:11:17.962577', '2026-03-14 00:11:17.962577') RETURNING "id" /*application='TrainSync'*/[0m
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Exists? (5.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'test@example.com' LIMIT 1[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES ('test@example.com', '$2a$12$jF7jd6vy1J9KHa0xg4DQXOrSqRmtcwQkCQ8wQQh3hxiVs5IYAvk8e', NULL, NULL, NULL, 0, '2026-03-14 00:22:11.596878', '2026-03-14 00:22:11.596878') RETURNING "id" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
