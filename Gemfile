@@ -20,7 +20,7 @@ gem "devise-jwt", "~> 0.11"
 gem "jwt", "~> 2.7"
 
 # QR Code generation
-gem "rqrcode", "~> 2.2"
+gem "rqrcode", "~> 3.2"
 
 # CORS support
 gem "rack-cors"
