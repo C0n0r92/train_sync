@@ -1,0 +1,584 @@
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (574.0ms)[0m  [1m[35mCREATE DATABASE "train_sync_development" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (156.5ms)[0m  [1m[35mCREATE DATABASE "train_sync_test" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='TrainSync'*/[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-03-14 00:06:20.328633', '2026-03-14 00:06:20.328635') RETURNING "key" /*application='TrainSync'*/[0m
+Migrating to DeviseCreateUsers (20260314000342)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "role" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='TrainSync'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000342') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateJwtDenylists (20260314000441)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE "jwt_denylists" ("id" bigserial primary key, "jti" character varying, "exp" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000441') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateWorkouts (20260314000448)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (104.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_development" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (53.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_test" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (515.9ms)[0m  [1m[35mCREATE DATABASE "train_sync_development" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (151.9ms)[0m  [1m[35mCREATE DATABASE "train_sync_test" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='TrainSync'*/[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-03-14 00:06:42.350427', '2026-03-14 00:06:42.350430') RETURNING "key" /*application='TrainSync'*/[0m
+Migrating to DeviseCreateUsers (20260314000342)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "role" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='TrainSync'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000342') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateJwtDenylists (20260314000441)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "jwt_denylists" ("id" bigserial primary key, "jti" character varying, "exp" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000441') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateWorkouts (20260314000448)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" bigserial primary key, "coach_id" bigint NOT NULL, "name" character varying, "blocks" jsonb, "status" integer DEFAULT 0, "version" integer DEFAULT 1, "is_public" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0312582f7b"
+FOREIGN KEY ("coach_id")
+  REFERENCES "users" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id") /*application='TrainSync'*/[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id") /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (81.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_development" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (63.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_test" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (509.1ms)[0m  [1m[35mCREATE DATABASE "train_sync_development" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE DATABASE "train_sync_test" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35m (32.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='TrainSync'*/[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-03-14 00:06:56.747223', '2026-03-14 00:06:56.747225') RETURNING "key" /*application='TrainSync'*/[0m
+Migrating to DeviseCreateUsers (20260314000342)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "role" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='TrainSync'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000342') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateJwtDenylists (20260314000441)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "jwt_denylists" ("id" bigserial primary key, "jti" character varying, "exp" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000441') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateWorkouts (20260314000448)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" bigserial primary key, "coach_id" bigint NOT NULL, "name" character varying, "blocks" jsonb, "status" integer DEFAULT 0, "version" integer DEFAULT 1, "is_public" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0312582f7b"
+FOREIGN KEY ("coach_id")
+  REFERENCES "users" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id") /*application='TrainSync'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_status" ON "workouts" ("status") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000448') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateQrCodes (20260314000453)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateQrCodes (20260314000453)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+Reverting CreateWorkouts (20260314000448)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP INDEX  "index_workouts_on_status" /*application='TrainSync'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "workouts" /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20260314000448' /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateWorkouts (20260314000448)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" bigserial primary key, "coach_id" bigint NOT NULL, "name" character varying, "blocks" jsonb, "status" integer DEFAULT 0, "version" integer DEFAULT 1, "is_public" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0312582f7b"
+FOREIGN KEY ("coach_id")
+  REFERENCES "users" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id") /*application='TrainSync'*/[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_status" ON "workouts" ("status") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000448') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateQrCodes (20260314000453)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateQrCodes (20260314000453)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "qr_codes" ("id" bigserial primary key, "workout_id" bigint NOT NULL, "short_id" character varying NOT NULL, "variant" integer DEFAULT 0, "expires_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_64f304a5c1"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_qr_codes_on_workout_id" ON "qr_codes" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_codes_on_short_id" ON "qr_codes" ("short_id") /*application='TrainSync'*/[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE INDEX "index_qr_codes_on_workout_id" ON "qr_codes" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateQrCodes (20260314000453)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "qr_codes" ("id" bigserial primary key, "workout_id" bigint NOT NULL, "short_id" character varying NOT NULL, "variant" integer DEFAULT 0, "expires_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_64f304a5c1"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE INDEX "index_qr_codes_on_workout_id" ON "qr_codes" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_codes_on_short_id" ON "qr_codes" ("short_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_qr_codes_on_workout_id" ON "qr_codes" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateQrCodes (20260314000453)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "qr_codes" ("id" bigserial primary key, "workout_id" bigint NOT NULL, "short_id" character varying NOT NULL, "variant" integer DEFAULT 0, "expires_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_64f304a5c1"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_qr_codes_on_workout_id" ON "qr_codes" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_codes_on_short_id" ON "qr_codes" ("short_id") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000453') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateQrScans (20260314000459)
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "qr_scans" ("id" bigserial primary key, "qr_code_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "scanned_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0d6388eeeb"
+FOREIGN KEY ("qr_code_id")
+  REFERENCES "qr_codes" ("id")
+, CONSTRAINT "fk_rails_a0534711ae"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "athletes" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateQrScans (20260314000459)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "qr_scans" ("id" bigserial primary key, "qr_code_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "scanned_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0d6388eeeb"
+FOREIGN KEY ("qr_code_id")
+  REFERENCES "qr_codes" ("id")
+, CONSTRAINT "fk_rails_a0534711ae"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "athletes" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateQrScans (20260314000459)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "qr_scans" ("id" bigserial primary key, "qr_code_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "scanned_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_0d6388eeeb"
+FOREIGN KEY ("qr_code_id")
+  REFERENCES "qr_codes" ("id")
+, CONSTRAINT "fk_rails_a0534711ae"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_qr_scans_on_qr_code_id" ON "qr_scans" ("qr_code_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_qr_scans_on_athlete_id" ON "qr_scans" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_scans_on_qr_code_id_and_athlete_id" ON "qr_scans" ("qr_code_id", "athlete_id") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000459') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateDeviceTokens (20260314000505)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateDeviceTokens (20260314000505)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (20.8ms)[0m  [1m[35mCREATE TABLE "device_tokens" ("id" bigserial primary key, "user_id" bigint NOT NULL, "token" character varying NOT NULL, "platform" integer DEFAULT 0, "expires_at" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e99e290457"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE INDEX "index_device_tokens_on_user_id" ON "device_tokens" ("user_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_device_tokens_on_token" ON "device_tokens" ("token") /*application='TrainSync'*/[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE INDEX "index_device_tokens_on_user_id" ON "device_tokens" ("user_id") /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateDeviceTokens (20260314000505)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (25.1ms)[0m  [1m[35mCREATE TABLE "device_tokens" ("id" bigserial primary key, "user_id" bigint NOT NULL, "token" character varying NOT NULL, "platform" integer DEFAULT 0, "expires_at" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e99e290457"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_device_tokens_on_user_id" ON "device_tokens" ("user_id") /*application='TrainSync'*/[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_device_tokens_on_token" ON "device_tokens" ("token") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000505') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateWorkoutSessions (20260314000511)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "workout_sessions" ("id" bigserial primary key, "qr_scan_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "workout_id" bigint NOT NULL, "started_at" timestamp(6), "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_98d196ce77"
+FOREIGN KEY ("qr_scan_id")
+  REFERENCES "qr_scans" ("id")
+, CONSTRAINT "fk_rails_9b3c33a4d5"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_cbcdca6028"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_qr_scan_id" ON "workout_sessions" ("qr_scan_id") /*application='TrainSync'*/[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_athlete_id" ON "workout_sessions" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_workout_id" ON "workout_sessions" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_athlete_id" ON "workout_sessions" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateWorkoutSessions (20260314000511)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "workout_sessions" ("id" bigserial primary key, "qr_scan_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "workout_id" bigint NOT NULL, "started_at" timestamp(6), "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_98d196ce77"
+FOREIGN KEY ("qr_scan_id")
+  REFERENCES "qr_scans" ("id")
+, CONSTRAINT "fk_rails_9b3c33a4d5"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_cbcdca6028"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_qr_scan_id" ON "workout_sessions" ("qr_scan_id") /*application='TrainSync'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_athlete_id" ON "workout_sessions" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_workout_id" ON "workout_sessions" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_athlete_id" ON "workout_sessions" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+Migrating to CreateWorkoutSessions (20260314000511)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (23.6ms)[0m  [1m[35mCREATE TABLE "workout_sessions" ("id" bigserial primary key, "qr_scan_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "workout_id" bigint NOT NULL, "started_at" timestamp(6), "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_98d196ce77"
+FOREIGN KEY ("qr_scan_id")
+  REFERENCES "qr_scans" ("id")
+, CONSTRAINT "fk_rails_9b3c33a4d5"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_cbcdca6028"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_qr_scan_id" ON "workout_sessions" ("qr_scan_id") /*application='TrainSync'*/[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_athlete_id" ON "workout_sessions" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_workout_id" ON "workout_sessions" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_completed_at" ON "workout_sessions" ("completed_at") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000511') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+Migrating to CreateWorkoutResults (20260314000517)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "workout_results" ("id" bigserial primary key, "workout_session_id" bigint NOT NULL, "block_results" jsonb, "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e36cc1b176"
+FOREIGN KEY ("workout_session_id")
+  REFERENCES "workout_sessions" ("id")
+) /*application='TrainSync'*/[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE INDEX "index_workout_results_on_workout_session_id" ON "workout_results" ("workout_session_id") /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260314000517') RETURNING "version" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Exists? (11.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES ('coach@example.com', '$2a$12$VIaISlGnIU6yjDd.WgQfsexFjq2Q.uDRDBpMunEmw/aXSsd636Oie', NULL, NULL, NULL, 1, '2026-03-14 00:09:48.584882', '2026-03-14 00:09:48.584882') RETURNING "id" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (8.8ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[36mUser Load (23.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mWorkout Load (3.7ms)[0m  [1m[34mSELECT "workouts".* FROM "workouts" WHERE "workouts"."coach_id" = 1 /*application='TrainSync'*/[0m
+  [1m[36mDeviceToken Load (5.7ms)[0m  [1m[34mSELECT "device_tokens".* FROM "device_tokens" WHERE "device_tokens"."user_id" = 1 /*application='TrainSync'*/[0m
+  [1m[36mQrScan Load (1.1ms)[0m  [1m[34mSELECT "qr_scans".* FROM "qr_scans" WHERE "qr_scans"."user_id" = 1 /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Exists? (5.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (115.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_development" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (61.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_test" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (340.0ms)[0m  [1m[35mCREATE DATABASE "train_sync_development" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (150.2ms)[0m  [1m[35mCREATE DATABASE "train_sync_test" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "device_tokens" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "device_tokens" ("id" bigserial primary key, "user_id" bigint NOT NULL, "token" character varying NOT NULL, "platform" integer DEFAULT 0, "expires_at" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_device_tokens_on_token" ON "device_tokens" ("token") /*application='TrainSync'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_device_tokens_on_user_id" ON "device_tokens" ("user_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "jwt_denylists" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "jwt_denylists" ("id" bigserial primary key, "jti" character varying, "exp" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "qr_codes" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "qr_codes" ("id" bigserial primary key, "workout_id" bigint NOT NULL, "short_id" character varying NOT NULL, "variant" integer DEFAULT 0, "expires_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_codes_on_short_id" ON "qr_codes" ("short_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_qr_codes_on_workout_id" ON "qr_codes" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "qr_scans" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "qr_scans" ("id" bigserial primary key, "qr_code_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "scanned_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_qr_scans_on_athlete_id" ON "qr_scans" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_scans_on_qr_code_id_and_athlete_id" ON "qr_scans" ("qr_code_id", "athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_qr_scans_on_qr_code_id" ON "qr_scans" ("qr_code_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "role" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='TrainSync'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "workout_results" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "workout_results" ("id" bigserial primary key, "workout_session_id" bigint NOT NULL, "block_results" jsonb, "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_workout_results_on_workout_session_id" ON "workout_results" ("workout_session_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "workout_sessions" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "workout_sessions" ("id" bigserial primary key, "qr_scan_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "workout_id" bigint NOT NULL, "started_at" timestamp(6), "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_athlete_id" ON "workout_sessions" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_completed_at" ON "workout_sessions" ("completed_at") /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_qr_scan_id" ON "workout_sessions" ("qr_scan_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_workout_id" ON "workout_sessions" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "workouts" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" bigserial primary key, "coach_id" bigint NOT NULL, "name" character varying, "blocks" jsonb, "status" integer DEFAULT 0, "version" integer DEFAULT 1, "is_public" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_status" ON "workouts" ("status") /*application='TrainSync'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "device_tokens" ADD CONSTRAINT "fk_rails_e99e290457"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "qr_codes" ADD CONSTRAINT "fk_rails_64f304a5c1"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "qr_scans" ADD CONSTRAINT "fk_rails_0d6388eeeb"
+FOREIGN KEY ("qr_code_id")
+  REFERENCES "qr_codes" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "qr_scans" ADD CONSTRAINT "fk_rails_a0534711ae"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "workout_results" ADD CONSTRAINT "fk_rails_e36cc1b176"
+FOREIGN KEY ("workout_session_id")
+  REFERENCES "workout_sessions" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "workout_sessions" ADD CONSTRAINT "fk_rails_98d196ce77"
+FOREIGN KEY ("qr_scan_id")
+  REFERENCES "qr_scans" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "workout_sessions" ADD CONSTRAINT "fk_rails_9b3c33a4d5"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "workout_sessions" ADD CONSTRAINT "fk_rails_cbcdca6028"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "workouts" ADD CONSTRAINT "fk_rails_0312582f7b"
+FOREIGN KEY ("coach_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260314000517) /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20260314000511),
+(20260314000505),
+(20260314000459),
+(20260314000453),
+(20260314000448),
+(20260314000441),
+(20260314000342); /*application='TrainSync'*/[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-03-14 00:10:36.230846', '2026-03-14 00:10:36.230848') RETURNING "key" /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '3c20ca5efc8b8268f1870b049a96cf27c9691b75', '2026-03-14 00:10:36.232569', '2026-03-14 00:10:36.232571') RETURNING "key" /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Exists? (7.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1[0m
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES ('coach@example.com', '$2a$12$uxPpp2hAKPfX4sahtxle6eOob8r.On.c61FtdXjFR0o2iXAnRhmXe', NULL, NULL, NULL, 1, '2026-03-14 00:10:38.955370', '2026-03-14 00:10:38.955370') RETURNING "id" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mWorkout Create (3.9ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "name", "blocks", "status", "version", "is_public", "created_at", "updated_at") VALUES (1, 'Test Workout', '[]', 0, 1, FALSE, '2026-03-14 00:10:38.985858', '2026-03-14 00:10:38.985858') RETURNING "id" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (95.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_development" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (66.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "train_sync_test" /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (561.8ms)[0m  [1m[35mCREATE DATABASE "train_sync_development" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mSET search_path TO public /*application='TrainSync'*/[0m
+  [1m[35m (147.8ms)[0m  [1m[35mCREATE DATABASE "train_sync_test" ENCODING = 'unicode' /*application='TrainSync'*/[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql" SCHEMA pg_catalog /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "device_tokens" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE TABLE "device_tokens" ("id" bigserial primary key, "user_id" bigint NOT NULL, "token" character varying NOT NULL, "platform" integer DEFAULT 0, "expires_at" timestamp(6) NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_device_tokens_on_token" ON "device_tokens" ("token") /*application='TrainSync'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_device_tokens_on_user_id" ON "device_tokens" ("user_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "jwt_denylists" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "jwt_denylists" ("id" bigserial primary key, "jti" character varying, "exp" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "qr_codes" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "qr_codes" ("id" bigserial primary key, "workout_id" bigint NOT NULL, "short_id" character varying NOT NULL, "variant" integer DEFAULT 0, "expires_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_codes_on_short_id" ON "qr_codes" ("short_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_qr_codes_on_workout_id" ON "qr_codes" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "qr_scans" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "qr_scans" ("id" bigserial primary key, "qr_code_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "scanned_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_qr_scans_on_athlete_id" ON "qr_scans" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_qr_scans_on_qr_code_id_and_athlete_id" ON "qr_scans" ("qr_code_id", "athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_qr_scans_on_qr_code_id" ON "qr_scans" ("qr_code_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp(6), "remember_created_at" timestamp(6), "role" integer DEFAULT 0 NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email") /*application='TrainSync'*/[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token") /*application='TrainSync'*/[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "workout_results" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "workout_results" ("id" bigserial primary key, "workout_session_id" bigint NOT NULL, "block_results" jsonb, "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_workout_results_on_workout_session_id" ON "workout_results" ("workout_session_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "workout_sessions" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "workout_sessions" ("id" bigserial primary key, "qr_scan_id" bigint NOT NULL, "athlete_id" bigint NOT NULL, "workout_id" bigint NOT NULL, "started_at" timestamp(6), "completed_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_athlete_id" ON "workout_sessions" ("athlete_id") /*application='TrainSync'*/[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_completed_at" ON "workout_sessions" ("completed_at") /*application='TrainSync'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_qr_scan_id" ON "workout_sessions" ("qr_scan_id") /*application='TrainSync'*/[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_workout_sessions_on_workout_id" ON "workout_sessions" ("workout_id") /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "workouts" CASCADE /*application='TrainSync'*/[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "workouts" ("id" bigserial primary key, "coach_id" bigint NOT NULL, "name" character varying, "blocks" jsonb, "status" integer DEFAULT 0, "version" integer DEFAULT 1, "is_public" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_coach_id" ON "workouts" ("coach_id") /*application='TrainSync'*/[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_workouts_on_status" ON "workouts" ("status") /*application='TrainSync'*/[0m
+  [1m[35m (6.0ms)[0m  [1m[35mALTER TABLE "device_tokens" ADD CONSTRAINT "fk_rails_e99e290457"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (4.3ms)[0m  [1m[35mALTER TABLE "qr_codes" ADD CONSTRAINT "fk_rails_64f304a5c1"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "qr_scans" ADD CONSTRAINT "fk_rails_0d6388eeeb"
+FOREIGN KEY ("qr_code_id")
+  REFERENCES "qr_codes" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "qr_scans" ADD CONSTRAINT "fk_rails_a0534711ae"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "workout_results" ADD CONSTRAINT "fk_rails_e36cc1b176"
+FOREIGN KEY ("workout_session_id")
+  REFERENCES "workout_sessions" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "workout_sessions" ADD CONSTRAINT "fk_rails_98d196ce77"
+FOREIGN KEY ("qr_scan_id")
+  REFERENCES "qr_scans" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "workout_sessions" ADD CONSTRAINT "fk_rails_9b3c33a4d5"
+FOREIGN KEY ("athlete_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "workout_sessions" ADD CONSTRAINT "fk_rails_cbcdca6028"
+FOREIGN KEY ("workout_id")
+  REFERENCES "workouts" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "workouts" ADD CONSTRAINT "fk_rails_0312582f7b"
+FOREIGN KEY ("coach_id")
+  REFERENCES "users" ("id")
+ /*application='TrainSync'*/[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20260314000517) /*application='TrainSync'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20260314000511),
+(20260314000505),
+(20260314000459),
+(20260314000453),
+(20260314000448),
+(20260314000441),
+(20260314000342); /*application='TrainSync'*/[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-03-14 00:11:09.296435', '2026-03-14 00:11:09.296437') RETURNING "key" /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '3c20ca5efc8b8268f1870b049a96cf27c9691b75', '2026-03-14 00:11:09.302161', '2026-03-14 00:11:09.302163') RETURNING "key" /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6932471919277367400) /*application='TrainSync'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Exists? (4.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'coach@example.com' LIMIT 1[0m
+  [1m[36mUser Create (8.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "role", "created_at", "updated_at") VALUES ('coach@example.com', '$2a$12$DJV3k5Gv9IXX/E6K6yXLyetAPy47IT8.AI9U7FS.mX1EWJ.yy8gv.', NULL, NULL, NULL, 1, '2026-03-14 00:11:17.920294', '2026-03-14 00:11:17.920294') RETURNING "id" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mWorkout Create (3.1ms)[0m  [1m[32mINSERT INTO "workouts" ("coach_id", "name", "blocks", "status", "version", "is_public", "created_at", "updated_at") VALUES (1, 'Test Workout', '[]', 0, 1, FALSE, '2026-03-14 00:11:17.947695', '2026-03-14 00:11:17.947695') RETURNING "id" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN /*application='TrainSync'*/[0m
+  [1m[36mQrCode Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "qr_codes" WHERE "qr_codes"."short_id" = 'abc123' LIMIT 1 /*application='TrainSync'*/[0m
+  [1m[36mQrCode Create (0.7ms)[0m  [1m[32mINSERT INTO "qr_codes" ("workout_id", "short_id", "variant", "expires_at", "created_at", "updated_at") VALUES (1, 'abc123', 0, NULL, '2026-03-14 00:11:17.962577', '2026-03-14 00:11:17.962577') RETURNING "id" /*application='TrainSync'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT /*application='TrainSync'*/[0m

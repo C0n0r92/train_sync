@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workout_session: one
+  block_results: 
+  completed_at: 2026-03-14 00:05:17
+
+two:
+  workout_session: two
+  block_results: 
+  completed_at: 2026-03-14 00:05:17

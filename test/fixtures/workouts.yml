@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coach: one
+  name: MyString
+  blocks: 
+  status: 1
+  version: 1
+  is_public: false
+  created_at: 2026-03-14 00:04:48
+  updated_at: 2026-03-14 00:04:48
+
+two:
+  coach: two
+  name: MyString
+  blocks: 
+  status: 1
+  version: 1
+  is_public: false
+  created_at: 2026-03-14 00:04:48
+  updated_at: 2026-03-14 00:04:48

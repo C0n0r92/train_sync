@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qr_scan: one
+  athlete: one
+  workout: one
+  started_at: 2026-03-14 00:05:11
+  completed_at: 2026-03-14 00:05:11
+
+two:
+  qr_scan: two
+  athlete: two
+  workout: two
+  started_at: 2026-03-14 00:05:11
+  completed_at: 2026-03-14 00:05:11
