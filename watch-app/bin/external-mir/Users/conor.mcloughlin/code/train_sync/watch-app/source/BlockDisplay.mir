@@ -1,0 +1,1331 @@
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [WatchUi,5,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Graphics,6,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [System,7,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [Timer,8,14,19]; ]
+import Toybox.Timer;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Lang,9,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 11; @symbol_classdef = [BlockDisplay,11,6,18]; @symbol_extends<0> = [WatchUi,11,27,34]; @symbol_extends<1> = [View,11,35,39]; ]
+class BlockDisplay extends WatchUi.View {
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 12; @position = 16; @symbol_vardef = [_block,12,16,22]; @symbol_type<0> = [Dictionary,12,26,36]; ]
+    private
+    var _block as Dictionary or Null;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 13; @position = 16; @symbol_vardef = [_blockIndex,13,16,27]; @symbol_type<0> = [Number,13,31,37]; ]
+    private
+    var _blockIndex as Number;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 14; @position = 16; @symbol_vardef = [_totalBlocks,14,16,28]; @symbol_type<0> = [Number,14,32,38]; ]
+    private
+    var _totalBlocks as Number;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 15; @position = 16; @symbol_vardef = [_elapsedSeconds,15,16,31]; @symbol_type<0> = [Number,15,35,41]; ]
+    private
+    var _elapsedSeconds as Number;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 16; @position = 16; @symbol_vardef = [_timerHandle,16,16,28]; @symbol_type<0> = [Timer,16,32,37]; @symbol_type<1> = [Timer,16,38,43]; ]
+    private
+    var _timerHandle as Timer.Timer or Null;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 17; @position = 16; @symbol_vardef = [_isTimerRunning,17,16,31]; @symbol_type<0> = [Boolean,17,35,42]; ]
+    private
+    var _isTimerRunning as Boolean;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 18; @position = 16; @symbol_vardef = [_sessionManager,18,16,31]; @symbol_type<0> = [SessionManager,18,35,49]; ]
+    private
+    var _sessionManager as SessionManager;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 20; @symbol_functiondef = [initialize,20,20,30]; @symbol_param<0> = [sessionManager,20,31,45]; @symbol_param<0>_type<0> = [SessionManager,20,49,63]; ]
+    public
+    function initialize(sessionManager as SessionManager) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_20_65_29_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 21 8 ]
+        symbol [ View %tmp.2 21 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 21 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 22 8 ]
+        %tmp.4 = lgetv %sessionManager;
+        symbol [ sessionManager %tmp.4 22 26 40 ];
+        symbol [ _sessionManager ? 22 8 23 ];
+        putv self :_sessionManager %tmp.4;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 23 8 ]
+        %tmp.5 = lgetv %sessionManager;
+        symbol [ sessionManager %tmp.5 23 17 31 ];
+        symbol [ getCurrentBlock %tmp.6 23 32 47 ];
+        %tmp.6 = getv function %tmp.5 :getCurrentBlock;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        symbol [ _block ? 23 8 14 ];
+        putv self :_block %tmp.7;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 24 8 ]
+        %tmp.8 = lgetv %sessionManager;
+        symbol [ sessionManager %tmp.8 24 22 36 ];
+        symbol [ getCurrentBlockIndex %tmp.9 24 37 57 ];
+        %tmp.9 = getv function %tmp.8 :getCurrentBlockIndex;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        symbol [ _blockIndex ? 24 8 19 ];
+        putv self :_blockIndex %tmp.10;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 25 8 ]
+        %tmp.11 = lgetv %sessionManager;
+        symbol [ sessionManager %tmp.11 25 23 37 ];
+        symbol [ getTotalBlocks %tmp.12 25 38 52 ];
+        %tmp.12 = getv function %tmp.11 :getTotalBlocks;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        symbol [ _totalBlocks ? 25 8 20 ];
+        putv self :_totalBlocks %tmp.13;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 26 8 ]
+        %tmp.14 = 0;
+        symbol [ _elapsedSeconds ? 26 8 23 ];
+        putv self :_elapsedSeconds %tmp.14;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 27 8 ]
+        %tmp.15 = false;
+        symbol [ _isTimerRunning ? 27 8 23 ];
+        putv self :_isTimerRunning %tmp.15;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 28 8 ]
+        %tmp.16 = null;
+        symbol [ _timerHandle ? 28 8 20 ];
+        putv self :_timerHandle %tmp.16;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_20_65_29_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 31; @symbol_functiondef = [onUpdate,31,20,28]; @symbol_param<0> = [dc,31,29,31]; @symbol_param<0>_type<0> = [Dc,31,35,37]; ]
+    public
+    function onUpdate(dc as Dc) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_31_47_46_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 32 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 32 8 10 ];
+        symbol [ setColor %tmp.2 32 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 32 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.4 32 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_WHITE;
+        symbol [ Graphics %tmp.5 32 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 32 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 33 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 33 8 10 ];
+        symbol [ clear %tmp.8 33 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 36 8 ]
+        %tmp.9 = self;
+        symbol [ drawBlockHeader %tmp.10 36 8 23 ];
+        %tmp.10 = getv function %tmp.9 :drawBlockHeader;
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 36 24 26 ];
+        invoke %tmp.9 %tmp.10(%tmp.11);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 39 8 ]
+        %tmp.12 = self;
+        symbol [ drawBlockDetails %tmp.13 39 8 24 ];
+        %tmp.13 = getv function %tmp.12 :drawBlockDetails;
+        %tmp.14 = lgetv %dc;
+        symbol [ dc %tmp.14 39 25 27 ];
+        invoke %tmp.12 %tmp.13(%tmp.14);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 42 8 ]
+        %tmp.15 = self;
+        symbol [ drawTimer %tmp.16 42 8 17 ];
+        %tmp.16 = getv function %tmp.15 :drawTimer;
+        %tmp.17 = lgetv %dc;
+        symbol [ dc %tmp.17 42 18 20 ];
+        invoke %tmp.15 %tmp.16(%tmp.17);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 45 8 ]
+        %tmp.18 = self;
+        symbol [ drawControls %tmp.19 45 8 20 ];
+        %tmp.19 = getv function %tmp.18 :drawControls;
+        %tmp.20 = lgetv %dc;
+        symbol [ dc %tmp.20 45 21 23 ];
+        invoke %tmp.18 %tmp.19(%tmp.20);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_31_47_46_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 48; @symbol_functiondef = [drawBlockHeader,48,21,36]; @symbol_param<0> = [dc,48,37,39]; @symbol_param<0>_type<0> = [Dc,48,43,45]; ]
+    private
+    function drawBlockHeader(dc as Dc) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_48_55_77_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 49 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_48_55_77_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_48_55_77_4_stop" ]
+        %headerY.1 = local;
+        symbol [ headerY %headerY.1 49 12 19 ];
+        %tmp.1 = 20;
+        lputv %headerY.1 %tmp.1;
+        symbol [ headerY %headerY.1 49 12 19 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 50 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_48_55_77_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_48_55_77_4_stop" ]
+        %headerText.2 = local;
+        symbol [ headerText %headerText.2 50 12 22 ];
+        %tmp.2 = "Block ";
+        symbol [ _blockIndex %tmp.4 50 37 48 ];
+        %tmp.4 = getv ? :_blockIndex;
+        %tmp.5 = 1;
+        %tmp.6 = add %tmp.4 %tmp.5;
+        %tmp.7 = add %tmp.2 %tmp.6;
+        %tmp.8 = "/";
+        %tmp.9 = add %tmp.7 %tmp.8;
+        symbol [ _totalBlocks %tmp.11 50 62 74 ];
+        %tmp.11 = getv ? :_totalBlocks;
+        %tmp.12 = add %tmp.9 %tmp.11;
+        lputv %headerText.2 %tmp.12;
+        symbol [ headerText %headerText.2 50 12 22 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 52 8 ]
+        %tmp.13 = lgetv %dc;
+        symbol [ dc %tmp.13 52 8 10 ];
+        symbol [ setColor %tmp.14 52 11 19 ];
+        %tmp.14 = getv function %tmp.13 :setColor;
+        symbol [ Graphics %tmp.15 52 20 28 ];
+        %tmp.15 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.16 52 29 40 ];
+        %tmp.16 = getv %tmp.15 :COLOR_WHITE;
+        symbol [ Graphics %tmp.17 52 42 50 ];
+        %tmp.17 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.18 52 51 62 ];
+        %tmp.18 = getv %tmp.17 :COLOR_BLACK;
+        invoke %tmp.13 %tmp.14(%tmp.16, %tmp.18);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 53 8 ]
+        %tmp.19 = lgetv %dc;
+        symbol [ dc %tmp.19 53 8 10 ];
+        symbol [ drawText %tmp.20 53 11 19 ];
+        %tmp.20 = getv function %tmp.19 :drawText;
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 54 12 14 ];
+        symbol [ getWidth %tmp.22 54 15 23 ];
+        %tmp.22 = getv function %tmp.21 :getWidth;
+        %tmp.23 = invoke %tmp.21 %tmp.22();
+        %tmp.24 = 2;
+        %tmp.25 = div %tmp.23 %tmp.24;
+        %tmp.26 = lgetv %headerY.1;
+        symbol [ headerY %tmp.26 55 12 19 ];
+        symbol [ Graphics %tmp.27 56 12 20 ];
+        %tmp.27 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.28 56 21 31 ];
+        %tmp.28 = getv %tmp.27 :FONT_LARGE;
+        %tmp.29 = lgetv %headerText.2;
+        symbol [ headerText %tmp.29 57 12 22 ];
+        symbol [ Graphics %tmp.30 58 12 20 ];
+        %tmp.30 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.31 58 21 40 ];
+        %tmp.31 = getv %tmp.30 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.19 %tmp.20(%tmp.25, %tmp.26, %tmp.28, %tmp.29, %tmp.31);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 62 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_8_76_8_if_stmt:
+        symbol [ _block %tmp.33 62 12 18 ];
+        %tmp.33 = getv ? :_block;
+        %tmp.34 = null;
+        %tmp.35 = ne %tmp.33 %tmp.34;
+        bf %tmp.35 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_8_76_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_8_76_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_28_76_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 63 12 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_28_76_8_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_28_76_8_stop" ]
+        %block.3 = local;
+        symbol [ block %block.3 63 16 21 ];
+        symbol [ _block %tmp.37 63 24 30 ];
+        %tmp.37 = getv ? :_block;
+        %tmp.38 = as %tmp.37 { (!Null) };
+        %tmp.39 = as %tmp.38 Dictionary;
+        symbol [ Dictionary %tmp.39 63 34 44 ];
+        lputv %block.3 %tmp.39;
+        symbol [ block %block.3 63 16 21 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 64 12 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_28_76_8_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_28_76_8_stop" ]
+        %blockType.4 = local;
+        symbol [ blockType %blockType.4 64 16 25 ];
+        %tmp.40 = "UNKNOWN";
+        lputv %blockType.4 %tmp.40;
+        symbol [ blockType %blockType.4 64 16 25 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 65 12 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_12_67_12_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_16_65_57_begin:
+        %tmp.41 = lgetv %block.3;
+        symbol [ block %tmp.41 65 16 21 ];
+        symbol [ hasKey %tmp.42 65 22 28 ];
+        %tmp.42 = getv function %tmp.41 :hasKey;
+        %tmp.43 = "type";
+        %tmp.44 = invoke %tmp.41 %tmp.42(%tmp.43);
+        bf %tmp.44 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_12_67_12_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_40_65_57_true:
+        %tmp.45 = lgetv %block.3;
+        symbol [ block %tmp.45 65 40 45 ];
+        %tmp.46 = "type";
+        %tmp.47 = agetv %tmp.45 %tmp.46;
+        %tmp.48 = null;
+        %tmp.49 = ne %tmp.47 %tmp.48;
+        push %tmp.49;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_40_65_57_end:
+        %tmp.50 = phi [%tmp.44 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_16_65_57_begin] [%tmp.49 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_40_65_57_true] [%tmp.50 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_40_65_57_end];
+        bf %tmp.50 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_12_67_12_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_12_67_12_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_63_67_12_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 66 16 ]
+        %tmp.51 = lgetv %block.3;
+        symbol [ block %tmp.51 66 29 34 ];
+        %tmp.52 = "type";
+        %tmp.53 = agetv %tmp.51 %tmp.52;
+        %tmp.54 = as %tmp.53 String;
+        symbol [ String %tmp.54 66 46 52 ];
+        symbol [ toUpper %tmp.55 66 54 61 ];
+        %tmp.55 = getv function %tmp.54 :toUpper;
+        %tmp.56 = invoke %tmp.54 %tmp.55();
+        lputv %blockType.4 %tmp.56;
+        symbol [ blockType %blockType.4 66 16 25 ];
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_63_67_12_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_12_67_12_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_65_12_67_12_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 68 12 ]
+        %tmp.57 = lgetv %dc;
+        symbol [ dc %tmp.57 68 12 14 ];
+        symbol [ setColor %tmp.58 68 15 23 ];
+        %tmp.58 = getv function %tmp.57 :setColor;
+        symbol [ Graphics %tmp.59 68 24 32 ];
+        %tmp.59 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.60 68 33 46 ];
+        %tmp.60 = getv %tmp.59 :COLOR_LT_GRAY;
+        symbol [ Graphics %tmp.61 68 48 56 ];
+        %tmp.61 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.62 68 57 68 ];
+        %tmp.62 = getv %tmp.61 :COLOR_BLACK;
+        invoke %tmp.57 %tmp.58(%tmp.60, %tmp.62);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 69 12 ]
+        %tmp.63 = lgetv %dc;
+        symbol [ dc %tmp.63 69 12 14 ];
+        symbol [ drawText %tmp.64 69 15 23 ];
+        %tmp.64 = getv function %tmp.63 :drawText;
+        %tmp.65 = lgetv %dc;
+        symbol [ dc %tmp.65 70 16 18 ];
+        symbol [ getWidth %tmp.66 70 19 27 ];
+        %tmp.66 = getv function %tmp.65 :getWidth;
+        %tmp.67 = invoke %tmp.65 %tmp.66();
+        %tmp.68 = 2;
+        %tmp.69 = div %tmp.67 %tmp.68;
+        %tmp.70 = lgetv %headerY.1;
+        symbol [ headerY %tmp.70 71 16 23 ];
+        %tmp.71 = 40;
+        %tmp.72 = add %tmp.70 %tmp.71;
+        symbol [ Graphics %tmp.73 72 16 24 ];
+        %tmp.73 = getm $.Toybox.Graphics;
+        symbol [ FONT_MEDIUM %tmp.74 72 25 36 ];
+        %tmp.74 = getv %tmp.73 :FONT_MEDIUM;
+        %tmp.75 = lgetv %blockType.4;
+        symbol [ blockType %tmp.75 73 16 25 ];
+        symbol [ Graphics %tmp.76 74 16 24 ];
+        %tmp.76 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.77 74 25 44 ];
+        %tmp.77 = getv %tmp.76 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.63 %tmp.64(%tmp.69, %tmp.72, %tmp.74, %tmp.75, %tmp.77);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_28_76_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_8_76_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_62_8_76_8_if_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_48_55_77_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 79; @symbol_functiondef = [drawBlockDetails,79,21,37]; @symbol_param<0> = [dc,79,38,40]; @symbol_param<0>_type<0> = [Dc,79,44,46]; ]
+    private
+    function drawBlockDetails(dc as Dc) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_79_56_107_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 80 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_79_56_107_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_79_56_107_4_stop" ]
+        %detailsY.1 = local;
+        symbol [ detailsY %detailsY.1 80 12 20 ];
+        %tmp.1 = 100;
+        lputv %detailsY.1 %tmp.1;
+        symbol [ detailsY %detailsY.1 80 12 20 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 81 8 ]
+        %tmp.2 = lgetv %dc;
+        symbol [ dc %tmp.2 81 8 10 ];
+        symbol [ setColor %tmp.3 81 11 19 ];
+        %tmp.3 = getv function %tmp.2 :setColor;
+        symbol [ Graphics %tmp.4 81 20 28 ];
+        %tmp.4 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.5 81 29 40 ];
+        %tmp.5 = getv %tmp.4 :COLOR_WHITE;
+        symbol [ Graphics %tmp.6 81 42 50 ];
+        %tmp.6 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.7 81 51 62 ];
+        %tmp.7 = getv %tmp.6 :COLOR_BLACK;
+        invoke %tmp.2 %tmp.3(%tmp.5, %tmp.7);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 83 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_83_8_86_8_if_stmt:
+        symbol [ _block %tmp.9 83 12 18 ];
+        %tmp.9 = getv ? :_block;
+        %tmp.10 = null;
+        %tmp.11 = eq %tmp.9 %tmp.10;
+        bf %tmp.11 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_83_8_86_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_83_8_86_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_83_28_86_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 84 12 ]
+        %tmp.12 = lgetv %dc;
+        symbol [ dc %tmp.12 84 12 14 ];
+        symbol [ drawText %tmp.13 84 15 23 ];
+        %tmp.13 = getv function %tmp.12 :drawText;
+        %tmp.14 = 20;
+        %tmp.15 = lgetv %detailsY.1;
+        symbol [ detailsY %tmp.15 84 28 36 ];
+        symbol [ Graphics %tmp.16 84 38 46 ];
+        %tmp.16 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.17 84 47 57 ];
+        %tmp.17 = getv %tmp.16 :FONT_SMALL;
+        %tmp.18 = "No block data";
+        symbol [ Graphics %tmp.19 84 76 84 ];
+        %tmp.19 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.20 84 85 102 ];
+        %tmp.20 = getv %tmp.19 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.12 %tmp.13(%tmp.14, %tmp.15, %tmp.17, %tmp.18, %tmp.20);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 85 12 ]
+        ret ?;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_83_28_86_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_83_8_86_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_83_8_86_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 88 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_79_56_107_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_79_56_107_4_stop" ]
+        %block.2 = local;
+        symbol [ block %block.2 88 12 17 ];
+        symbol [ _block %tmp.22 88 20 26 ];
+        %tmp.22 = getv ? :_block;
+        %tmp.23 = as %tmp.22 Dictionary;
+        symbol [ Dictionary %tmp.23 88 30 40 ];
+        lputv %block.2 %tmp.23;
+        symbol [ block %block.2 88 12 17 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 91 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_8_106_8_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_12_91_71_begin:
+        %tmp.24 = lgetv %block.2;
+        symbol [ block %tmp.24 91 12 17 ];
+        symbol [ hasKey %tmp.25 91 18 24 ];
+        %tmp.25 = getv function %tmp.24 :hasKey;
+        %tmp.26 = "target_params";
+        %tmp.27 = invoke %tmp.24 %tmp.25(%tmp.26);
+        bf %tmp.27 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_8_106_8_if_else_false;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_45_91_71_true:
+        %tmp.28 = lgetv %block.2;
+        symbol [ block %tmp.28 91 45 50 ];
+        %tmp.29 = "target_params";
+        %tmp.30 = agetv %tmp.28 %tmp.29;
+        %tmp.31 = null;
+        %tmp.32 = ne %tmp.30 %tmp.31;
+        push %tmp.32;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_45_91_71_end:
+        %tmp.33 = phi [%tmp.27 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_12_91_71_begin] [%tmp.32 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_45_91_71_true] [%tmp.33 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_45_91_71_end];
+        bf %tmp.33 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_8_106_8_if_else_false;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_8_106_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_77_104_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 92 12 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_77_104_8_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_77_104_8_stop" ]
+        %targetParams.3 = local;
+        symbol [ targetParams %targetParams.3 92 16 28 ];
+        %tmp.34 = lgetv %block.2;
+        symbol [ block %tmp.34 92 31 36 ];
+        %tmp.35 = "target_params";
+        %tmp.36 = agetv %tmp.34 %tmp.35;
+        %tmp.37 = as %tmp.36 Dictionary;
+        symbol [ Dictionary %tmp.37 92 57 67 ];
+        lputv %targetParams.3 %tmp.37;
+        symbol [ targetParams %targetParams.3 92 16 28 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 93 12 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_77_104_8_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_77_104_8_stop" ]
+        %lines.4 = local;
+        symbol [ lines %lines.4 93 16 21 ];
+        %tmp.38 = self;
+        symbol [ formatBlockDetails %tmp.39 93 24 42 ];
+        %tmp.39 = getv function %tmp.38 :formatBlockDetails;
+        %tmp.40 = lgetv %targetParams.3;
+        symbol [ targetParams %tmp.40 93 43 55 ];
+        %tmp.41 = invoke %tmp.38 %tmp.39(%tmp.40);
+        lputv %lines.4 %tmp.41;
+        symbol [ lines %lines.4 93 16 21 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 95 12 ]
+        for @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_test @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_incr @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_init:
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_begin" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_end" ]
+        %i.5 = local;
+        symbol [ i %i.5 95 21 22 ];
+        %tmp.42 = 0;
+        lputv %i.5 %tmp.42;
+        symbol [ i %i.5 95 21 22 ];
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_test:
+        %tmp.43 = lgetv %i.5;
+        symbol [ i %tmp.43 95 28 29 ];
+        %tmp.44 = lgetv %lines.4;
+        symbol [ lines %tmp.44 95 32 37 ];
+        symbol [ size %tmp.45 95 38 42 ];
+        %tmp.45 = getv function %tmp.44 :size;
+        %tmp.46 = invoke %tmp.44 %tmp.45();
+        %tmp.47 = lt %tmp.43 %tmp.46;
+        bf %tmp.47 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_begin:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_51_103_12_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 96 16 ]
+        %tmp.48 = lgetv %dc;
+        symbol [ dc %tmp.48 96 16 18 ];
+        symbol [ drawText %tmp.49 96 19 27 ];
+        %tmp.49 = getv function %tmp.48 :drawText;
+        %tmp.50 = 20;
+        %tmp.51 = lgetv %detailsY.1;
+        symbol [ detailsY %tmp.51 98 20 28 ];
+        %tmp.52 = lgetv %i.5;
+        symbol [ i %tmp.52 98 32 33 ];
+        %tmp.53 = 25;
+        %tmp.54 = mul %tmp.52 %tmp.53;
+        %tmp.55 = add %tmp.51 %tmp.54;
+        symbol [ Graphics %tmp.56 99 20 28 ];
+        %tmp.56 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.57 99 29 39 ];
+        %tmp.57 = getv %tmp.56 :FONT_SMALL;
+        %tmp.58 = lgetv %lines.4;
+        symbol [ lines %tmp.58 100 20 25 ];
+        %tmp.59 = lgetv %i.5;
+        symbol [ i %tmp.59 100 26 27 ];
+        %tmp.60 = agetv %tmp.58 %tmp.59;
+        %tmp.61 = as %tmp.60 String;
+        symbol [ String %tmp.61 100 32 38 ];
+        symbol [ Graphics %tmp.62 101 20 28 ];
+        %tmp.62 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.63 101 29 46 ];
+        %tmp.63 = getv %tmp.62 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.48 %tmp.49(%tmp.50, %tmp.55, %tmp.57, %tmp.61, %tmp.63);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_51_103_12_stop:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_incr:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 95 ]
+        %tmp.66 = lgetv %i.5;
+        symbol [ i %tmp.66 95 46 47 ];
+        %tmp.67 = add %tmp.66 1;
+        lputv %i.5 %tmp.67;
+        symbol [ i %i.5 95 46 47 ];
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_test;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_95_12_103_12_for_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_77_104_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_8_106_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_8_106_8_if_else_false:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_104_15_106_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 105 12 ]
+        %tmp.68 = lgetv %dc;
+        symbol [ dc %tmp.68 105 12 14 ];
+        symbol [ drawText %tmp.69 105 15 23 ];
+        %tmp.69 = getv function %tmp.68 :drawText;
+        %tmp.70 = 20;
+        %tmp.71 = lgetv %detailsY.1;
+        symbol [ detailsY %tmp.71 105 28 36 ];
+        symbol [ Graphics %tmp.72 105 38 46 ];
+        %tmp.72 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.73 105 47 57 ];
+        %tmp.73 = getv %tmp.72 :FONT_SMALL;
+        %tmp.74 = "No target params";
+        symbol [ Graphics %tmp.75 105 79 87 ];
+        %tmp.75 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_LEFT %tmp.76 105 88 105 ];
+        %tmp.76 = getv %tmp.75 :TEXT_JUSTIFY_LEFT;
+        invoke %tmp.68 %tmp.69(%tmp.70, %tmp.71, %tmp.73, %tmp.74, %tmp.76);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_104_15_106_8_stop:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_91_8_106_8_if_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_79_56_107_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 109; @symbol_functiondef = [formatBlockDetails,109,21,39]; @symbol_param<0> = [params,109,40,46]; @symbol_param<0>_type<0> = [Dictionary,109,50,60]; @symbol_return<0> = [Array,109,65,70]; @symbol_return<1> = [String,109,71,77]; ]
+    private
+    function formatBlockDetails(params as Dictionary) as Array<String> {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_109_79_133_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 110 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_109_79_133_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_109_79_133_4_stop" ]
+        %details.1 = local;
+        symbol [ details %details.1 110 12 19 ];
+        %tmp.1 = newa 0 Array<String>;
+        symbol [ Array %tmp.1 110 28 33 ];
+        symbol [ String %tmp.1 110 34 40 ];
+        lputv %details.1 %tmp.1;
+        symbol [ details %details.1 110 12 19 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 112 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_8_114_8_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_12_112_63_begin:
+        %tmp.2 = lgetv %params;
+        symbol [ params %tmp.2 112 12 18 ];
+        symbol [ hasKey %tmp.3 112 19 25 ];
+        %tmp.3 = getv function %tmp.2 :hasKey;
+        %tmp.4 = "duration";
+        %tmp.5 = invoke %tmp.2 %tmp.3(%tmp.4);
+        bf %tmp.5 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_8_114_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_41_112_63_true:
+        %tmp.6 = lgetv %params;
+        symbol [ params %tmp.6 112 41 47 ];
+        %tmp.7 = "duration";
+        %tmp.8 = agetv %tmp.6 %tmp.7;
+        %tmp.9 = null;
+        %tmp.10 = ne %tmp.8 %tmp.9;
+        push %tmp.10;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_41_112_63_end:
+        %tmp.11 = phi [%tmp.5 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_12_112_63_begin] [%tmp.10 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_41_112_63_true] [%tmp.11 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_41_112_63_end];
+        bf %tmp.11 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_8_114_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_8_114_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_69_114_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 113 12 ]
+        %tmp.12 = lgetv %details.1;
+        symbol [ details %tmp.12 113 12 19 ];
+        symbol [ add %tmp.13 113 20 23 ];
+        %tmp.13 = getv function %tmp.12 :add;
+        %tmp.14 = "Duration: ";
+        %tmp.15 = lgetv %params;
+        symbol [ params %tmp.15 113 39 45 ];
+        %tmp.16 = "duration";
+        %tmp.17 = agetv %tmp.15 %tmp.16;
+        %tmp.18 = add %tmp.14 %tmp.17;
+        %tmp.19 = "s";
+        %tmp.20 = add %tmp.18 %tmp.19;
+        invoke %tmp.12 %tmp.13(%tmp.20);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_69_114_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_8_114_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_112_8_114_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 116 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_8_118_8_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_12_116_63_begin:
+        %tmp.21 = lgetv %params;
+        symbol [ params %tmp.21 116 12 18 ];
+        symbol [ hasKey %tmp.22 116 19 25 ];
+        %tmp.22 = getv function %tmp.21 :hasKey;
+        %tmp.23 = "distance";
+        %tmp.24 = invoke %tmp.21 %tmp.22(%tmp.23);
+        bf %tmp.24 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_8_118_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_41_116_63_true:
+        %tmp.25 = lgetv %params;
+        symbol [ params %tmp.25 116 41 47 ];
+        %tmp.26 = "distance";
+        %tmp.27 = agetv %tmp.25 %tmp.26;
+        %tmp.28 = null;
+        %tmp.29 = ne %tmp.27 %tmp.28;
+        push %tmp.29;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_41_116_63_end:
+        %tmp.30 = phi [%tmp.24 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_12_116_63_begin] [%tmp.29 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_41_116_63_true] [%tmp.30 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_41_116_63_end];
+        bf %tmp.30 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_8_118_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_8_118_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_69_118_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 117 12 ]
+        %tmp.31 = lgetv %details.1;
+        symbol [ details %tmp.31 117 12 19 ];
+        symbol [ add %tmp.32 117 20 23 ];
+        %tmp.32 = getv function %tmp.31 :add;
+        %tmp.33 = "Distance: ";
+        %tmp.34 = lgetv %params;
+        symbol [ params %tmp.34 117 39 45 ];
+        %tmp.35 = "distance";
+        %tmp.36 = agetv %tmp.34 %tmp.35;
+        %tmp.37 = add %tmp.33 %tmp.36;
+        %tmp.38 = "km";
+        %tmp.39 = add %tmp.37 %tmp.38;
+        invoke %tmp.31 %tmp.32(%tmp.39);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_69_118_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_8_118_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_116_8_118_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 120 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_8_122_8_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_12_120_55_begin:
+        %tmp.40 = lgetv %params;
+        symbol [ params %tmp.40 120 12 18 ];
+        symbol [ hasKey %tmp.41 120 19 25 ];
+        %tmp.41 = getv function %tmp.40 :hasKey;
+        %tmp.42 = "reps";
+        %tmp.43 = invoke %tmp.40 %tmp.41(%tmp.42);
+        bf %tmp.43 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_8_122_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_37_120_55_true:
+        %tmp.44 = lgetv %params;
+        symbol [ params %tmp.44 120 37 43 ];
+        %tmp.45 = "reps";
+        %tmp.46 = agetv %tmp.44 %tmp.45;
+        %tmp.47 = null;
+        %tmp.48 = ne %tmp.46 %tmp.47;
+        push %tmp.48;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_37_120_55_end:
+        %tmp.49 = phi [%tmp.43 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_12_120_55_begin] [%tmp.48 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_37_120_55_true] [%tmp.49 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_37_120_55_end];
+        bf %tmp.49 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_8_122_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_8_122_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_61_122_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 121 12 ]
+        %tmp.50 = lgetv %details.1;
+        symbol [ details %tmp.50 121 12 19 ];
+        symbol [ add %tmp.51 121 20 23 ];
+        %tmp.51 = getv function %tmp.50 :add;
+        %tmp.52 = "Reps: ";
+        %tmp.53 = lgetv %params;
+        symbol [ params %tmp.53 121 35 41 ];
+        %tmp.54 = "reps";
+        %tmp.55 = agetv %tmp.53 %tmp.54;
+        %tmp.56 = add %tmp.52 %tmp.55;
+        invoke %tmp.50 %tmp.51(%tmp.56);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_61_122_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_8_122_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_120_8_122_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 124 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_8_126_8_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_12_124_69_begin:
+        %tmp.57 = lgetv %params;
+        symbol [ params %tmp.57 124 12 18 ];
+        symbol [ hasKey %tmp.58 124 19 25 ];
+        %tmp.58 = getv function %tmp.57 :hasKey;
+        %tmp.59 = "pace_target";
+        %tmp.60 = invoke %tmp.57 %tmp.58(%tmp.59);
+        bf %tmp.60 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_8_126_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_44_124_69_true:
+        %tmp.61 = lgetv %params;
+        symbol [ params %tmp.61 124 44 50 ];
+        %tmp.62 = "pace_target";
+        %tmp.63 = agetv %tmp.61 %tmp.62;
+        %tmp.64 = null;
+        %tmp.65 = ne %tmp.63 %tmp.64;
+        push %tmp.65;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_44_124_69_end:
+        %tmp.66 = phi [%tmp.60 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_12_124_69_begin] [%tmp.65 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_44_124_69_true] [%tmp.66 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_44_124_69_end];
+        bf %tmp.66 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_8_126_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_8_126_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_75_126_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 125 12 ]
+        %tmp.67 = lgetv %details.1;
+        symbol [ details %tmp.67 125 12 19 ];
+        symbol [ add %tmp.68 125 20 23 ];
+        %tmp.68 = getv function %tmp.67 :add;
+        %tmp.69 = "Pace: ";
+        %tmp.70 = lgetv %params;
+        symbol [ params %tmp.70 125 35 41 ];
+        %tmp.71 = "pace_target";
+        %tmp.72 = agetv %tmp.70 %tmp.71;
+        %tmp.73 = add %tmp.69 %tmp.72;
+        %tmp.74 = "/km";
+        %tmp.75 = add %tmp.73 %tmp.74;
+        invoke %tmp.67 %tmp.68(%tmp.75);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_75_126_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_8_126_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_124_8_126_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 128 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_128_8_130_8_if_stmt:
+        %tmp.76 = lgetv %details.1;
+        symbol [ details %tmp.76 128 12 19 ];
+        symbol [ size %tmp.77 128 20 24 ];
+        %tmp.77 = getv function %tmp.76 :size;
+        %tmp.78 = invoke %tmp.76 %tmp.77();
+        %tmp.79 = 0;
+        %tmp.80 = eq %tmp.78 %tmp.79;
+        bf %tmp.80 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_128_8_130_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_128_8_130_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_128_33_130_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 129 12 ]
+        %tmp.81 = lgetv %details.1;
+        symbol [ details %tmp.81 129 12 19 ];
+        symbol [ add %tmp.82 129 20 23 ];
+        %tmp.82 = getv function %tmp.81 :add;
+        %tmp.83 = "No target params";
+        invoke %tmp.81 %tmp.82(%tmp.83);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_128_33_130_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_128_8_130_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_128_8_130_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 132 8 ]
+        %tmp.84 = lgetv %details.1;
+        symbol [ details %tmp.84 132 15 22 ];
+        ret %tmp.84;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_109_79_133_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 135; @symbol_functiondef = [drawTimer,135,21,30]; @symbol_param<0> = [dc,135,31,33]; @symbol_param<0>_type<0> = [Dc,135,37,39]; ]
+    private
+    function drawTimer(dc as Dc) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 136 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_stop" ]
+        %timerY.1 = local;
+        symbol [ timerY %timerY.1 136 12 18 ];
+        %tmp.1 = 200;
+        lputv %timerY.1 %tmp.1;
+        symbol [ timerY %timerY.1 136 12 18 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 137 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_stop" ]
+        %minutes.2 = local;
+        symbol [ minutes %minutes.2 137 12 19 ];
+        symbol [ _elapsedSeconds %tmp.3 137 22 37 ];
+        %tmp.3 = getv ? :_elapsedSeconds;
+        %tmp.4 = 60;
+        %tmp.5 = div %tmp.3 %tmp.4;
+        lputv %minutes.2 %tmp.5;
+        symbol [ minutes %minutes.2 137 12 19 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 138 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_stop" ]
+        %seconds.3 = local;
+        symbol [ seconds %seconds.3 138 12 19 ];
+        symbol [ _elapsedSeconds %tmp.7 138 22 37 ];
+        %tmp.7 = getv ? :_elapsedSeconds;
+        %tmp.8 = 60;
+        %tmp.9 = mod %tmp.7 %tmp.8;
+        lputv %seconds.3 %tmp.9;
+        symbol [ seconds %seconds.3 138 12 19 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 139 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_stop" ]
+        %timerText.4 = local;
+        symbol [ timerText %timerText.4 139 12 21 ];
+        %tmp.10 = self;
+        symbol [ formatTimer %tmp.11 139 24 35 ];
+        %tmp.11 = getv function %tmp.10 :formatTimer;
+        %tmp.12 = lgetv %minutes.2;
+        symbol [ minutes %tmp.12 139 36 43 ];
+        %tmp.13 = lgetv %seconds.3;
+        symbol [ seconds %tmp.13 139 45 52 ];
+        %tmp.14 = invoke %tmp.10 %tmp.11(%tmp.12, %tmp.13);
+        lputv %timerText.4 %tmp.14;
+        symbol [ timerText %timerText.4 139 12 21 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 141 8 ]
+        %tmp.15 = lgetv %dc;
+        symbol [ dc %tmp.15 141 8 10 ];
+        symbol [ setColor %tmp.16 141 11 19 ];
+        %tmp.16 = getv function %tmp.15 :setColor;
+        symbol [ Graphics %tmp.17 141 20 28 ];
+        %tmp.17 = getm $.Toybox.Graphics;
+        symbol [ COLOR_YELLOW %tmp.18 141 29 41 ];
+        %tmp.18 = getv %tmp.17 :COLOR_YELLOW;
+        symbol [ Graphics %tmp.19 141 43 51 ];
+        %tmp.19 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.20 141 52 63 ];
+        %tmp.20 = getv %tmp.19 :COLOR_BLACK;
+        invoke %tmp.15 %tmp.16(%tmp.18, %tmp.20);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 142 8 ]
+        %tmp.21 = lgetv %dc;
+        symbol [ dc %tmp.21 142 8 10 ];
+        symbol [ drawText %tmp.22 142 11 19 ];
+        %tmp.22 = getv function %tmp.21 :drawText;
+        %tmp.23 = lgetv %dc;
+        symbol [ dc %tmp.23 143 12 14 ];
+        symbol [ getWidth %tmp.24 143 15 23 ];
+        %tmp.24 = getv function %tmp.23 :getWidth;
+        %tmp.25 = invoke %tmp.23 %tmp.24();
+        %tmp.26 = 2;
+        %tmp.27 = div %tmp.25 %tmp.26;
+        %tmp.28 = lgetv %timerY.1;
+        symbol [ timerY %tmp.28 144 12 18 ];
+        symbol [ Graphics %tmp.29 145 12 20 ];
+        %tmp.29 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.30 145 21 31 ];
+        %tmp.30 = getv %tmp.29 :FONT_LARGE;
+        %tmp.31 = lgetv %timerText.4;
+        symbol [ timerText %tmp.31 146 12 21 ];
+        symbol [ Graphics %tmp.32 147 12 20 ];
+        %tmp.32 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.33 147 21 40 ];
+        %tmp.33 = getv %tmp.32 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.21 %tmp.22(%tmp.27, %tmp.28, %tmp.30, %tmp.31, %tmp.33);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_135_49_149_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 151; @symbol_functiondef = [formatTimer,151,21,32]; @symbol_param<0> = [minutes,151,33,40]; @symbol_param<0>_type<0> = [Number,151,44,50]; @symbol_param<1> = [seconds,151,52,59]; @symbol_param<1>_type<0> = [Number,151,63,69]; @symbol_return<0> = [String,151,74,80]; ]
+    private
+    function formatTimer(minutes as Number, seconds as Number) as String {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_151_81_155_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 152 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_151_81_155_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_151_81_155_4_stop" ]
+        %minStr.1 = local;
+        symbol [ minStr %minStr.1 152 12 18 ];
+        %tmp.1 = lgetv %minutes;
+        symbol [ minutes %tmp.1 152 21 28 ];
+        symbol [ toString %tmp.2 152 29 37 ];
+        %tmp.2 = getv function %tmp.1 :toString;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %minStr.1 %tmp.3;
+        symbol [ minStr %minStr.1 152 12 18 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 153 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_151_81_155_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_151_81_155_4_stop" ]
+        %secStr.2 = local;
+        symbol [ secStr %secStr.2 153 12 18 ];
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_begin:
+        %tmp.4 = lgetv %seconds;
+        symbol [ seconds %tmp.4 153 22 29 ];
+        %tmp.5 = 10;
+        %tmp.6 = lt %tmp.4 %tmp.5;
+        bf %tmp.6 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_else_false;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_true:
+        %tmp.7 = "0";
+        %tmp.8 = lgetv %seconds;
+        symbol [ seconds %tmp.8 153 44 51 ];
+        symbol [ toString %tmp.9 153 52 60 ];
+        %tmp.9 = getv function %tmp.8 :toString;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = add %tmp.7 %tmp.10;
+        push %tmp.11;
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_else_false:
+        %tmp.12 = lgetv %seconds;
+        symbol [ seconds %tmp.12 153 65 72 ];
+        symbol [ toString %tmp.13 153 73 81 ];
+        %tmp.13 = getv function %tmp.12 :toString;
+        %tmp.14 = invoke %tmp.12 %tmp.13();
+        push %tmp.14;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_end:
+        %tmp.15 = phi [%tmp.6 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_begin] [%tmp.11 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_true] [%tmp.14 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_else_false] [%tmp.15 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_153_21_153_82_end];
+        lputv %secStr.2 %tmp.15;
+        symbol [ secStr %secStr.2 153 12 18 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 154 8 ]
+        %tmp.16 = lgetv %minStr.1;
+        symbol [ minStr %tmp.16 154 15 21 ];
+        %tmp.17 = ":";
+        %tmp.18 = add %tmp.16 %tmp.17;
+        %tmp.19 = lgetv %secStr.2;
+        symbol [ secStr %tmp.19 154 30 36 ];
+        %tmp.20 = add %tmp.18 %tmp.19;
+        ret %tmp.20;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_151_81_155_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 157; @symbol_functiondef = [drawControls,157,21,33]; @symbol_param<0> = [dc,157,34,36]; @symbol_param<0>_type<0> = [Dc,157,40,42]; ]
+    private
+    function drawControls(dc as Dc) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_157_52_178_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 158 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_157_52_178_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_157_52_178_4_stop" ]
+        %controlY.1 = local;
+        symbol [ controlY %controlY.1 158 12 20 ];
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 158 23 25 ];
+        symbol [ getHeight %tmp.2 158 26 35 ];
+        %tmp.2 = getv function %tmp.1 :getHeight;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        %tmp.4 = 40;
+        %tmp.5 = sub %tmp.3 %tmp.4;
+        lputv %controlY.1 %tmp.5;
+        symbol [ controlY %controlY.1 158 12 20 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 159 8 ]
+        %tmp.6 = lgetv %dc;
+        symbol [ dc %tmp.6 159 8 10 ];
+        symbol [ setColor %tmp.7 159 11 19 ];
+        %tmp.7 = getv function %tmp.6 :setColor;
+        symbol [ Graphics %tmp.8 159 20 28 ];
+        %tmp.8 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.9 159 29 42 ];
+        %tmp.9 = getv %tmp.8 :COLOR_LT_GRAY;
+        symbol [ Graphics %tmp.10 159 44 52 ];
+        %tmp.10 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.11 159 53 64 ];
+        %tmp.11 = getv %tmp.10 :COLOR_BLACK;
+        invoke %tmp.6 %tmp.7(%tmp.9, %tmp.11);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 161 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_8_177_8_if_stmt:
+        symbol [ _isTimerRunning %tmp.13 161 12 27 ];
+        %tmp.13 = getv ? :_isTimerRunning;
+        bf %tmp.13 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_8_177_8_if_else_false;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_8_177_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_29_169_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 162 12 ]
+        %tmp.14 = lgetv %dc;
+        symbol [ dc %tmp.14 162 12 14 ];
+        symbol [ drawText %tmp.15 162 15 23 ];
+        %tmp.15 = getv function %tmp.14 :drawText;
+        %tmp.16 = lgetv %dc;
+        symbol [ dc %tmp.16 163 16 18 ];
+        symbol [ getWidth %tmp.17 163 19 27 ];
+        %tmp.17 = getv function %tmp.16 :getWidth;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        %tmp.19 = 2;
+        %tmp.20 = div %tmp.18 %tmp.19;
+        %tmp.21 = lgetv %controlY.1;
+        symbol [ controlY %tmp.21 164 16 24 ];
+        symbol [ Graphics %tmp.22 165 16 24 ];
+        %tmp.22 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.23 165 25 35 ];
+        %tmp.23 = getv %tmp.22 :FONT_SMALL;
+        %tmp.24 = "TAP TO STOP";
+        symbol [ Graphics %tmp.25 167 16 24 ];
+        %tmp.25 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.26 167 25 44 ];
+        %tmp.26 = getv %tmp.25 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.14 %tmp.15(%tmp.20, %tmp.21, %tmp.23, %tmp.24, %tmp.26);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_29_169_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_8_177_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_8_177_8_if_else_false:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_169_15_177_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 170 12 ]
+        %tmp.27 = lgetv %dc;
+        symbol [ dc %tmp.27 170 12 14 ];
+        symbol [ drawText %tmp.28 170 15 23 ];
+        %tmp.28 = getv function %tmp.27 :drawText;
+        %tmp.29 = lgetv %dc;
+        symbol [ dc %tmp.29 171 16 18 ];
+        symbol [ getWidth %tmp.30 171 19 27 ];
+        %tmp.30 = getv function %tmp.29 :getWidth;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        %tmp.32 = 2;
+        %tmp.33 = div %tmp.31 %tmp.32;
+        %tmp.34 = lgetv %controlY.1;
+        symbol [ controlY %tmp.34 172 16 24 ];
+        symbol [ Graphics %tmp.35 173 16 24 ];
+        %tmp.35 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.36 173 25 35 ];
+        %tmp.36 = getv %tmp.35 :FONT_SMALL;
+        %tmp.37 = "TAP TO CONTINUE";
+        symbol [ Graphics %tmp.38 175 16 24 ];
+        %tmp.38 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.39 175 25 44 ];
+        %tmp.39 = getv %tmp.38 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.27 %tmp.28(%tmp.33, %tmp.34, %tmp.36, %tmp.37, %tmp.39);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_169_15_177_8_stop:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_161_8_177_8_if_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_157_52_178_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 180; @symbol_functiondef = [startTimer,180,20,30]; ]
+    public
+    function startTimer() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_180_41_186_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 181 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_181_8_185_8_if_stmt:
+        symbol [ _isTimerRunning %tmp.2 181 13 28 ];
+        %tmp.2 = getv ? :_isTimerRunning;
+        %tmp.3 = not %tmp.2;
+        bf %tmp.3 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_181_8_185_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_181_8_185_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_181_30_185_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 182 12 ]
+        %tmp.4 = true;
+        symbol [ _isTimerRunning ? 182 12 27 ];
+        putv self :_isTimerRunning %tmp.4;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 183 12 ]
+        symbol [ Timer %tmp.7 183 31 36 ];
+        %tmp.7 = getm $.Toybox.Timer;
+        symbol [ Timer %tmp.8 183 37 42 ];
+        %tmp.8 = getv function ? %tmp.7 :Timer;
+        %tmp.5 = newc %tmp.8 ();
+        symbol [ _timerHandle ? 183 12 24 ];
+        putv self :_timerHandle %tmp.5;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 184 12 ]
+        symbol [ _timerHandle %tmp.10 184 12 24 ];
+        %tmp.10 = getv ? :_timerHandle;
+        symbol [ start %tmp.11 184 25 30 ];
+        %tmp.11 = getv function %tmp.10 :start;
+        %tmp.12 = self;
+        symbol [ method %tmp.13 184 31 37 ];
+        %tmp.13 = getv function %tmp.12 :method;
+        %tmp.15 = const :onTimerTick;
+        symbol [ onTimerTick %tmp.15 184 39 50 const ];
+        %tmp.16 = invoke %tmp.12 %tmp.13(%tmp.15);
+        %tmp.17 = 1000;
+        %tmp.18 = true;
+        invoke %tmp.10 %tmp.11(%tmp.16, %tmp.17, %tmp.18);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_181_30_185_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_181_8_185_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_181_8_185_8_if_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_180_41_186_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 188; @symbol_functiondef = [stopTimer,188,20,29]; ]
+    public
+    function stopTimer() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_188_40_193_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 189 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_8_192_8_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_12_189_47_begin:
+        symbol [ _isTimerRunning %tmp.2 189 12 27 ];
+        %tmp.2 = getv ? :_isTimerRunning;
+        bf %tmp.2 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_8_192_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_31_189_47_true:
+        symbol [ _timerHandle %tmp.4 189 31 43 ];
+        %tmp.4 = getv ? :_timerHandle;
+        %tmp.5 = null;
+        %tmp.6 = ne %tmp.4 %tmp.5;
+        push %tmp.6;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_31_189_47_end:
+        %tmp.7 = phi [%tmp.2 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_12_189_47_begin] [%tmp.6 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_31_189_47_true] [%tmp.7 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_31_189_47_end];
+        bf %tmp.7 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_8_192_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_8_192_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_53_192_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 190 12 ]
+        %tmp.8 = false;
+        symbol [ _isTimerRunning ? 190 12 27 ];
+        putv self :_isTimerRunning %tmp.8;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 191 12 ]
+        symbol [ _timerHandle %tmp.10 191 12 24 ];
+        %tmp.10 = getv ? :_timerHandle;
+        %tmp.11 = as %tmp.10 { (!Null) };
+        symbol [ stop %tmp.12 191 25 29 ];
+        %tmp.12 = getv function %tmp.11 :stop;
+        invoke %tmp.11 %tmp.12();
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_53_192_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_8_192_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_189_8_192_8_if_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_188_40_193_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 195; @symbol_functiondef = [onTimerTick,195,20,31]; ]
+    public
+    function onTimerTick() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_195_42_198_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 196 8 ]
+        symbol [ _elapsedSeconds %tmp.1 196 8 23 ];
+        %tmp.1 = getv self :_elapsedSeconds;
+        %tmp.2 = 1;
+        %tmp.3 = add %tmp.1 %tmp.2;
+        symbol [ _elapsedSeconds ? 196 8 23 ];
+        putv self :_elapsedSeconds dup %tmp.3;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 197 8 ]
+        symbol [ WatchUi %tmp.4 197 8 15 ];
+        %tmp.4 = getm $.Toybox.WatchUi;
+        symbol [ requestUpdate %tmp.5 197 16 29 ];
+        %tmp.5 = getv function %tmp.4 :requestUpdate;
+        invoke %tmp.4 %tmp.5();
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_195_42_198_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 200; @symbol_functiondef = [isTimerRunning,200,20,34]; @symbol_return<0> = [Boolean,200,40,47]; ]
+    public
+    function isTimerRunning() as Boolean {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_200_48_202_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 201 8 ]
+        symbol [ _isTimerRunning %tmp.2 201 15 30 ];
+        %tmp.2 = getv ? :_isTimerRunning;
+        ret %tmp.2;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_200_48_202_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 204; @symbol_functiondef = [getSessionManager,204,20,37]; @symbol_return<0> = [SessionManager,204,43,57]; ]
+    public
+    function getSessionManager() as SessionManager {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_204_58_206_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 205 8 ]
+        symbol [ _sessionManager %tmp.2 205 15 30 ];
+        %tmp.2 = getv ? :_sessionManager;
+        ret %tmp.2;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_204_58_206_4_stop:
+    }
+}
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 209; @symbol_classdef = [BlockDelegate,209,6,19]; @symbol_extends<0> = [WatchUi,209,28,35]; @symbol_extends<1> = [BehaviorDelegate,209,36,52]; ]
+class BlockDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 209; ]
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 209; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 210; @position = 16; @symbol_vardef = [_display,210,16,24]; @symbol_type<0> = [BlockDisplay,210,28,40]; ]
+    private
+    var _display as BlockDisplay;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 212; @symbol_functiondef = [initialize,212,20,30]; @symbol_param<0> = [display,212,31,38]; @symbol_param<0>_type<0> = [BlockDisplay,212,42,54]; ]
+    public
+    function initialize(display as BlockDisplay) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_212_56_215_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 213 8 ]
+        symbol [ BehaviorDelegate %tmp.2 213 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 213 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 214 8 ]
+        %tmp.4 = lgetv %display;
+        symbol [ display %tmp.4 214 19 26 ];
+        symbol [ _display ? 214 8 16 ];
+        putv self :_display %tmp.4;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_212_56_215_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 217; @symbol_functiondef = [onKey,217,20,25]; @symbol_param<0> = [evt,217,26,29]; @symbol_param<0>_type<0> = [KeyEvent,217,33,41]; @symbol_return<0> = [Boolean,217,46,53]; ]
+    public
+    function onKey(evt as KeyEvent) as Boolean {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_217_54_231_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 218 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_217_54_231_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_217_54_231_4_stop" ]
+        %key.1 = local;
+        symbol [ key %key.1 218 12 15 ];
+        %tmp.1 = lgetv %evt;
+        symbol [ evt %tmp.1 218 18 21 ];
+        symbol [ getKey %tmp.2 218 22 28 ];
+        %tmp.2 = getv function %tmp.1 :getKey;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %key.1 %tmp.3;
+        symbol [ key %key.1 218 12 15 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 220 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_220_8_223_8_if_stmt:
+        %tmp.4 = lgetv %key.1;
+        symbol [ key %tmp.4 220 12 15 ];
+        symbol [ WatchUi %tmp.5 220 19 26 ];
+        %tmp.5 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ENTER %tmp.6 220 27 36 ];
+        %tmp.6 = getv %tmp.5 :KEY_ENTER;
+        %tmp.7 = eq %tmp.4 %tmp.6;
+        bf %tmp.7 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_220_8_223_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_220_8_223_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_220_38_223_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 221 12 ]
+        %tmp.8 = self;
+        symbol [ nextBlock %tmp.9 221 12 21 ];
+        %tmp.9 = getv function %tmp.8 :nextBlock;
+        invoke %tmp.8 %tmp.9();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 222 12 ]
+        %tmp.10 = true;
+        ret %tmp.10;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_220_38_223_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_220_8_223_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_220_8_223_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 225 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_225_8_228_8_if_stmt:
+        %tmp.11 = lgetv %key.1;
+        symbol [ key %tmp.11 225 12 15 ];
+        symbol [ WatchUi %tmp.12 225 19 26 ];
+        %tmp.12 = getm $.Toybox.WatchUi;
+        symbol [ KEY_ESC %tmp.13 225 27 34 ];
+        %tmp.13 = getv %tmp.12 :KEY_ESC;
+        %tmp.14 = eq %tmp.11 %tmp.13;
+        bf %tmp.14 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_225_8_228_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_225_8_228_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_225_36_228_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 226 12 ]
+        %tmp.15 = self;
+        symbol [ previousBlock %tmp.16 226 12 25 ];
+        %tmp.16 = getv function %tmp.15 :previousBlock;
+        invoke %tmp.15 %tmp.16();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 227 12 ]
+        %tmp.17 = true;
+        ret %tmp.17;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_225_36_228_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_225_8_228_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_225_8_228_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 230 8 ]
+        %tmp.18 = false;
+        ret %tmp.18;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_217_54_231_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 233; @symbol_functiondef = [onTap,233,20,25]; @symbol_param<0> = [evt,233,26,29]; @symbol_param<0>_type<0> = [ClickEvent,233,33,43]; @symbol_return<0> = [Boolean,233,48,55]; ]
+    public
+    function onTap(evt as ClickEvent) as Boolean {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_233_56_242_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 235 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_8_239_8_if_stmt:
+        symbol [ _display %tmp.2 235 12 20 ];
+        %tmp.2 = getv ? :_display;
+        symbol [ isTimerRunning %tmp.3 235 21 35 ];
+        %tmp.3 = getv function %tmp.2 :isTimerRunning;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        bf %tmp.4 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_8_239_8_if_else_false;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_8_239_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_39_237_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 236 12 ]
+        symbol [ _display %tmp.6 236 12 20 ];
+        %tmp.6 = getv ? :_display;
+        symbol [ stopTimer %tmp.7 236 21 30 ];
+        %tmp.7 = getv function %tmp.6 :stopTimer;
+        invoke %tmp.6 %tmp.7();
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_39_237_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_8_239_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_8_239_8_if_else_false:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_237_15_239_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 238 12 ]
+        symbol [ _display %tmp.9 238 12 20 ];
+        %tmp.9 = getv ? :_display;
+        symbol [ startTimer %tmp.10 238 21 31 ];
+        %tmp.10 = getv function %tmp.9 :startTimer;
+        invoke %tmp.9 %tmp.10();
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_237_15_239_8_stop:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_235_8_239_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 241 8 ]
+        %tmp.11 = true;
+        ret %tmp.11;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_233_56_242_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 244; @symbol_functiondef = [nextBlock,244,21,30]; ]
+    private
+    function nextBlock() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_244_41_254_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 245 8 ]
+        symbol [ _display %tmp.2 245 8 16 ];
+        %tmp.2 = getv ? :_display;
+        symbol [ stopTimer %tmp.3 245 17 26 ];
+        %tmp.3 = getv function %tmp.2 :stopTimer;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 246 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_244_41_254_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_244_41_254_4_stop" ]
+        %sessionManager.1 = local;
+        symbol [ sessionManager %sessionManager.1 246 12 26 ];
+        symbol [ _display %tmp.5 246 29 37 ];
+        %tmp.5 = getv ? :_display;
+        symbol [ getSessionManager %tmp.6 246 38 55 ];
+        %tmp.6 = getv function %tmp.5 :getSessionManager;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %sessionManager.1 %tmp.7;
+        symbol [ sessionManager %sessionManager.1 246 12 26 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 247 8 ]
+        %tmp.8 = lgetv %sessionManager.1;
+        symbol [ sessionManager %tmp.8 247 8 22 ];
+        symbol [ nextBlock %tmp.9 247 23 32 ];
+        %tmp.9 = getv function %tmp.8 :nextBlock;
+        invoke %tmp.8 %tmp.9();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 248 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_244_41_254_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_244_41_254_4_stop" ]
+        %newDisplay.2 = local;
+        symbol [ newDisplay %newDisplay.2 248 12 22 ];
+        symbol [ BlockDisplay %tmp.13 248 29 41 ];
+        %tmp.13 = getv ? :BlockDisplay;
+        %tmp.14 = lgetv %sessionManager.1;
+        symbol [ sessionManager %tmp.14 248 42 56 ];
+        %tmp.10 = newc %tmp.13 (%tmp.14);
+        lputv %newDisplay.2 %tmp.10;
+        symbol [ newDisplay %newDisplay.2 248 12 22 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 249 8 ]
+        symbol [ WatchUi %tmp.15 249 8 15 ];
+        %tmp.15 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.16 249 16 28 ];
+        %tmp.16 = getv function %tmp.15 :switchToView;
+        %tmp.17 = lgetv %newDisplay.2;
+        symbol [ newDisplay %tmp.17 250 12 22 ];
+        symbol [ BlockDelegate %tmp.21 251 16 29 ];
+        %tmp.21 = getv ? :BlockDelegate;
+        %tmp.22 = lgetv %newDisplay.2;
+        symbol [ newDisplay %tmp.22 251 30 40 ];
+        %tmp.18 = newc %tmp.21 (%tmp.22);
+        symbol [ WatchUi %tmp.23 252 12 19 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_LEFT %tmp.24 252 20 30 ];
+        %tmp.24 = getv %tmp.23 :SLIDE_LEFT;
+        invoke %tmp.15 %tmp.16(%tmp.17, %tmp.18, %tmp.24);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_244_41_254_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 256; @symbol_functiondef = [previousBlock,256,21,34]; ]
+    private
+    function previousBlock() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_256_45_266_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 257 8 ]
+        symbol [ _display %tmp.2 257 8 16 ];
+        %tmp.2 = getv ? :_display;
+        symbol [ stopTimer %tmp.3 257 17 26 ];
+        %tmp.3 = getv function %tmp.2 :stopTimer;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 258 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_256_45_266_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_256_45_266_4_stop" ]
+        %sessionManager.1 = local;
+        symbol [ sessionManager %sessionManager.1 258 12 26 ];
+        symbol [ _display %tmp.5 258 29 37 ];
+        %tmp.5 = getv ? :_display;
+        symbol [ getSessionManager %tmp.6 258 38 55 ];
+        %tmp.6 = getv function %tmp.5 :getSessionManager;
+        %tmp.7 = invoke %tmp.5 %tmp.6();
+        lputv %sessionManager.1 %tmp.7;
+        symbol [ sessionManager %sessionManager.1 258 12 26 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 259 8 ]
+        %tmp.8 = lgetv %sessionManager.1;
+        symbol [ sessionManager %tmp.8 259 8 22 ];
+        symbol [ previousBlock %tmp.9 259 23 36 ];
+        %tmp.9 = getv function %tmp.8 :previousBlock;
+        invoke %tmp.8 %tmp.9();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 260 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_256_45_266_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_256_45_266_4_stop" ]
+        %newDisplay.2 = local;
+        symbol [ newDisplay %newDisplay.2 260 12 22 ];
+        symbol [ BlockDisplay %tmp.13 260 29 41 ];
+        %tmp.13 = getv ? :BlockDisplay;
+        %tmp.14 = lgetv %sessionManager.1;
+        symbol [ sessionManager %tmp.14 260 42 56 ];
+        %tmp.10 = newc %tmp.13 (%tmp.14);
+        lputv %newDisplay.2 %tmp.10;
+        symbol [ newDisplay %newDisplay.2 260 12 22 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" 261 8 ]
+        symbol [ WatchUi %tmp.15 261 8 15 ];
+        %tmp.15 = getm $.Toybox.WatchUi;
+        symbol [ switchToView %tmp.16 261 16 28 ];
+        %tmp.16 = getv function %tmp.15 :switchToView;
+        %tmp.17 = lgetv %newDisplay.2;
+        symbol [ newDisplay %tmp.17 262 12 22 ];
+        symbol [ BlockDelegate %tmp.21 263 16 29 ];
+        %tmp.21 = getv ? :BlockDelegate;
+        %tmp.22 = lgetv %newDisplay.2;
+        symbol [ newDisplay %tmp.22 263 30 40 ];
+        %tmp.18 = newc %tmp.21 (%tmp.22);
+        symbol [ WatchUi %tmp.23 264 12 19 ];
+        %tmp.23 = getm $.Toybox.WatchUi;
+        symbol [ SLIDE_RIGHT %tmp.24 264 20 31 ];
+        %tmp.24 = getv %tmp.23 :SLIDE_RIGHT;
+        invoke %tmp.15 %tmp.16(%tmp.17, %tmp.18, %tmp.24);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_BlockDisplay_mc_256_45_266_4_stop:
+    }
+}
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc"; @line = 5; ]
+<init> {
+}

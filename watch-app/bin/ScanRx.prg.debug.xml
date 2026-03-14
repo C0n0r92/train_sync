@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/conor.mcloughlin/code/train_sync/watch-app/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="1" lineNum="41" parent="globals" pc="268435460" symbol="getApp"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="1" lineNum="42" parent="globals" pc="268435470" symbol="getApp"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="2" lineNum="9" parent="globals/HomeView" pc="268435481" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="3" lineNum="209" parent="globals/BlockDelegate" pc="268435493" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/bin/gen/no-device/source/Rez.mcgen" id="4" lineNum="7" parent="globals/Rez" pc="268435505" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="5" lineNum="11" parent="globals/BlockDisplay" pc="268435525" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="6" lineNum="43" parent="globals/HomeViewDelegate" pc="268435537" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="7" lineNum="14" parent="globals/ScanRxApp" pc="268435549" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="8" lineNum="12" parent="globals/HomeView" pc="268435561" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="8" lineNum="13" parent="globals/HomeView" pc="268435563" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="8" lineNum="14" parent="globals/HomeView" pc="268435575" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="9" lineNum="17" parent="globals/HomeView" pc="268435588" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="9" lineNum="18" parent="globals/HomeView" pc="268435591" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="9" lineNum="19" parent="globals/HomeView" pc="268435607" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="9" lineNum="22" parent="globals/HomeView" pc="268435615" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="9" lineNum="31" parent="globals/HomeView" pc="268435646" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="9" lineNum="32" parent="globals/HomeView" pc="268435653" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="9" lineNum="33" parent="globals/HomeView" pc="268435669" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="10" lineNum="256" parent="globals/BlockDelegate" pc="268435706" symbol="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="10" lineNum="257" parent="globals/BlockDelegate" pc="268435709" symbol="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="10" lineNum="258" parent="globals/BlockDelegate" pc="268435721" symbol="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="10" lineNum="259" parent="globals/BlockDelegate" pc="268435734" symbol="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="10" lineNum="260" parent="globals/BlockDelegate" pc="268435742" symbol="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="10" lineNum="261" parent="globals/BlockDelegate" pc="268435764" symbol="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="11" lineNum="212" parent="globals/BlockDelegate" pc="268435802" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="11" lineNum="213" parent="globals/BlockDelegate" pc="268435804" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="11" lineNum="214" parent="globals/BlockDelegate" pc="268435816" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="12" lineNum="233" parent="globals/BlockDelegate" pc="268435826" symbol="onTap"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="12" lineNum="235" parent="globals/BlockDelegate" pc="268435828" symbol="onTap"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="12" lineNum="236" parent="globals/BlockDelegate" pc="268435842" symbol="onTap"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="12" lineNum="238" parent="globals/BlockDelegate" pc="268435857" symbol="onTap"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="12" lineNum="241" parent="globals/BlockDelegate" pc="268435869" symbol="onTap"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="13" lineNum="244" parent="globals/BlockDelegate" pc="268435871" symbol="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="13" lineNum="245" parent="globals/BlockDelegate" pc="268435874" symbol="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="13" lineNum="246" parent="globals/BlockDelegate" pc="268435886" symbol="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="13" lineNum="247" parent="globals/BlockDelegate" pc="268435899" symbol="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="13" lineNum="248" parent="globals/BlockDelegate" pc="268435907" symbol="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="13" lineNum="249" parent="globals/BlockDelegate" pc="268435929" symbol="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="217" parent="globals/BlockDelegate" pc="268435967" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="218" parent="globals/BlockDelegate" pc="268435970" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="220" parent="globals/BlockDelegate" pc="268435979" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="221" parent="globals/BlockDelegate" pc="268435987" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="222" parent="globals/BlockDelegate" pc="268435994" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="225" parent="globals/BlockDelegate" pc="268435999" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="226" parent="globals/BlockDelegate" pc="268436007" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="227" parent="globals/BlockDelegate" pc="268436014" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="14" lineNum="230" parent="globals/BlockDelegate" pc="268436019" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="15" lineNum="157" parent="globals/SessionManager" pc="268436021" symbol="onResultsResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="15" lineNum="158" parent="globals/SessionManager" pc="268436023" symbol="onResultsResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="15" lineNum="159" parent="globals/SessionManager" pc="268436032" symbol="onResultsResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="15" lineNum="161" parent="globals/SessionManager" pc="268436053" symbol="onResultsResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="129" parent="globals/SessionManager" pc="268436075" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="130" parent="globals/SessionManager" pc="268436078" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="131" parent="globals/SessionManager" pc="268436096" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="132" parent="globals/SessionManager" pc="268436110" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="135" parent="globals/SessionManager" pc="268436114" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="136" parent="globals/SessionManager" pc="268436121" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="137" parent="globals/SessionManager" pc="268436131" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="138" parent="globals/SessionManager" pc="268436157" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="141" parent="globals/SessionManager" pc="268436172" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="16" lineNum="149" parent="globals/SessionManager" pc="268436210" symbol="submitResults"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="17" lineNum="169" parent="globals/SessionManager" pc="268436243" symbol="&lt;globals/SessionManager/&lt;&gt;log&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="17" lineNum="170" parent="globals/SessionManager" pc="268436245" symbol="&lt;globals/SessionManager/&lt;&gt;log&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="90" parent="globals/SessionManager" pc="268436267" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="91" parent="globals/SessionManager" pc="268436270" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="92" parent="globals/SessionManager" pc="268436279" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="93" parent="globals/SessionManager" pc="268436286" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="94" parent="globals/SessionManager" pc="268436305" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="95" parent="globals/SessionManager" pc="268436323" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="96" parent="globals/SessionManager" pc="268436342" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="18" lineNum="97" parent="globals/SessionManager" pc="268436356" symbol="nextBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="19" lineNum="108" parent="globals/SessionManager" pc="268436370" symbol="getCurrentBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="19" lineNum="109" parent="globals/SessionManager" pc="268436373" symbol="getCurrentBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="19" lineNum="110" parent="globals/SessionManager" pc="268436382" symbol="getCurrentBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="19" lineNum="111" parent="globals/SessionManager" pc="268436389" symbol="getCurrentBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="19" lineNum="112" parent="globals/SessionManager" pc="268436405" symbol="getCurrentBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="19" lineNum="115" parent="globals/SessionManager" pc="268436420" symbol="getCurrentBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="20" lineNum="118" parent="globals/SessionManager" pc="268436422" symbol="getCurrentBlockIndex"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="20" lineNum="119" parent="globals/SessionManager" pc="268436424" symbol="getCurrentBlockIndex"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="21" lineNum="102" parent="globals/SessionManager" pc="268436430" symbol="previousBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="21" lineNum="103" parent="globals/SessionManager" pc="268436432" symbol="previousBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="21" lineNum="104" parent="globals/SessionManager" pc="268436442" symbol="previousBlock"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="22" lineNum="165" parent="globals/SessionManager" pc="268436461" symbol="&lt;globals/SessionManager/&lt;&gt;showCompletionScreen&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="22" lineNum="166" parent="globals/SessionManager" pc="268436463" symbol="&lt;globals/SessionManager/&lt;&gt;showCompletionScreen&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="23" lineNum="35" parent="globals/SessionManager" pc="268436478" symbol="setNotifyCallback"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="23" lineNum="36" parent="globals/SessionManager" pc="268436480" symbol="setNotifyCallback"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="60" parent="globals/SessionManager" pc="268436490" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="61" parent="globals/SessionManager" pc="268436493" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="62" parent="globals/SessionManager" pc="268436501" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="64" parent="globals/SessionManager" pc="268436524" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="65" parent="globals/SessionManager" pc="268436554" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="66" parent="globals/SessionManager" pc="268436568" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="68" parent="globals/SessionManager" pc="268436572" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="69" parent="globals/SessionManager" pc="268436601" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="70" parent="globals/SessionManager" pc="268436611" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="71" parent="globals/SessionManager" pc="268436628" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="72" parent="globals/SessionManager" pc="268436643" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="73" parent="globals/SessionManager" pc="268436652" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="75" parent="globals/SessionManager" pc="268436660" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="76" parent="globals/SessionManager" pc="268436669" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="80" parent="globals/SessionManager" pc="268436694" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="82" parent="globals/SessionManager" pc="268436711" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="83" parent="globals/SessionManager" pc="268436720" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="84" parent="globals/SessionManager" pc="268436734" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="24" lineNum="86" parent="globals/SessionManager" pc="268436745" symbol="onSessionResponse"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="19" parent="globals/SessionManager" pc="268436763" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="20" parent="globals/SessionManager" pc="268436765" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="21" parent="globals/SessionManager" pc="268436783" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="22" parent="globals/SessionManager" pc="268436791" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="23" parent="globals/SessionManager" pc="268436799" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="24" parent="globals/SessionManager" pc="268436807" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="25" parent="globals/SessionManager" pc="268436815" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="26" parent="globals/SessionManager" pc="268436823" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="29" parent="globals/SessionManager" pc="268436831" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="30" parent="globals/SessionManager" pc="268436854" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="25" lineNum="31" parent="globals/SessionManager" pc="268436868" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="26" lineNum="40" parent="globals/SessionManager" pc="268436880" symbol="pollForWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="26" lineNum="41" parent="globals/SessionManager" pc="268436883" symbol="pollForWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="26" lineNum="42" parent="globals/SessionManager" pc="268436901" symbol="pollForWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="26" lineNum="43" parent="globals/SessionManager" pc="268436909" symbol="pollForWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="26" lineNum="44" parent="globals/SessionManager" pc="268436926" symbol="pollForWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="26" lineNum="51" parent="globals/SessionManager" pc="268436962" symbol="pollForWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="27" lineNum="122" parent="globals/SessionManager" pc="268436997" symbol="getTotalBlocks"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="27" lineNum="123" parent="globals/SessionManager" pc="268436999" symbol="getTotalBlocks"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="27" lineNum="124" parent="globals/SessionManager" pc="268437008" symbol="getTotalBlocks"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/SessionManager.mc" id="27" lineNum="126" parent="globals/SessionManager" pc="268437023" symbol="getTotalBlocks"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="28" lineNum="188" parent="globals/BlockDisplay" pc="268437025" symbol="stopTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="28" lineNum="189" parent="globals/BlockDisplay" pc="268437027" symbol="stopTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="28" lineNum="190" parent="globals/BlockDisplay" pc="268437044" symbol="stopTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="28" lineNum="191" parent="globals/BlockDisplay" pc="268437052" symbol="stopTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="48" parent="globals/BlockDisplay" pc="268437068" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="49" parent="globals/BlockDisplay" pc="268437071" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="50" parent="globals/BlockDisplay" pc="268437075" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="52" parent="globals/BlockDisplay" pc="268437103" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="53" parent="globals/BlockDisplay" pc="268437119" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="62" parent="globals/BlockDisplay" pc="268437147" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="63" parent="globals/BlockDisplay" pc="268437156" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="64" parent="globals/BlockDisplay" pc="268437163" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="65" parent="globals/BlockDisplay" pc="268437170" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="66" parent="globals/BlockDisplay" pc="268437199" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="68" parent="globals/BlockDisplay" pc="268437218" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="29" lineNum="69" parent="globals/BlockDisplay" pc="268437234" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="30" lineNum="204" parent="globals/BlockDisplay" pc="268437269" symbol="getSessionManager"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="30" lineNum="205" parent="globals/BlockDisplay" pc="268437271" symbol="getSessionManager"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="31" lineNum="157" parent="globals/BlockDisplay" pc="268437277" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="31" lineNum="158" parent="globals/BlockDisplay" pc="268437280" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="31" lineNum="159" parent="globals/BlockDisplay" pc="268437292" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="31" lineNum="161" parent="globals/BlockDisplay" pc="268437308" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="31" lineNum="162" parent="globals/BlockDisplay" pc="268437316" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="31" lineNum="170" parent="globals/BlockDisplay" pc="268437350" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="32" lineNum="195" parent="globals/BlockDisplay" pc="268437382" symbol="onTimerTick"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="32" lineNum="196" parent="globals/BlockDisplay" pc="268437384" symbol="onTimerTick"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="32" lineNum="197" parent="globals/BlockDisplay" pc="268437399" symbol="onTimerTick"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="33" lineNum="180" parent="globals/BlockDisplay" pc="268437411" symbol="startTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="33" lineNum="181" parent="globals/BlockDisplay" pc="268437413" symbol="startTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="33" lineNum="182" parent="globals/BlockDisplay" pc="268437422" symbol="startTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="33" lineNum="183" parent="globals/BlockDisplay" pc="268437430" symbol="startTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="33" lineNum="184" parent="globals/BlockDisplay" pc="268437459" symbol="startTimer"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="34" lineNum="200" parent="globals/BlockDisplay" pc="268437494" symbol="isTimerRunning"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="34" lineNum="201" parent="globals/BlockDisplay" pc="268437496" symbol="isTimerRunning"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="20" parent="globals/BlockDisplay" pc="268437502" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="21" parent="globals/BlockDisplay" pc="268437504" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="22" parent="globals/BlockDisplay" pc="268437516" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="23" parent="globals/BlockDisplay" pc="268437525" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="24" parent="globals/BlockDisplay" pc="268437539" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="25" parent="globals/BlockDisplay" pc="268437553" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="26" parent="globals/BlockDisplay" pc="268437567" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="27" parent="globals/BlockDisplay" pc="268437575" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="35" lineNum="28" parent="globals/BlockDisplay" pc="268437583" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="109" parent="globals/BlockDisplay" pc="268437592" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="110" parent="globals/BlockDisplay" pc="268437595" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="112" parent="globals/BlockDisplay" pc="268437599" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="113" parent="globals/BlockDisplay" pc="268437628" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="116" parent="globals/BlockDisplay" pc="268437661" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="117" parent="globals/BlockDisplay" pc="268437690" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="120" parent="globals/BlockDisplay" pc="268437723" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="121" parent="globals/BlockDisplay" pc="268437752" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="124" parent="globals/BlockDisplay" pc="268437779" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="125" parent="globals/BlockDisplay" pc="268437808" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="128" parent="globals/BlockDisplay" pc="268437841" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="129" parent="globals/BlockDisplay" pc="268437853" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="36" lineNum="132" parent="globals/BlockDisplay" pc="268437871" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="37" lineNum="31" parent="globals/BlockDisplay" pc="268437874" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="37" lineNum="32" parent="globals/BlockDisplay" pc="268437876" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="37" lineNum="33" parent="globals/BlockDisplay" pc="268437892" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="37" lineNum="36" parent="globals/BlockDisplay" pc="268437900" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="37" lineNum="39" parent="globals/BlockDisplay" pc="268437911" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="37" lineNum="42" parent="globals/BlockDisplay" pc="268437922" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="37" lineNum="45" parent="globals/BlockDisplay" pc="268437933" symbol="onUpdate"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="79" parent="globals/BlockDisplay" pc="268437945" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="80" parent="globals/BlockDisplay" pc="268437948" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="81" parent="globals/BlockDisplay" pc="268437952" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="83" parent="globals/BlockDisplay" pc="268437968" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="84" parent="globals/BlockDisplay" pc="268437977" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="85" parent="globals/BlockDisplay" pc="268438000" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="88" parent="globals/BlockDisplay" pc="268438004" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="91" parent="globals/BlockDisplay" pc="268438011" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="92" parent="globals/BlockDisplay" pc="268438040" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="93" parent="globals/BlockDisplay" pc="268438050" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="95" parent="globals/BlockDisplay" pc="268438062" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="96" parent="globals/BlockDisplay" pc="268438078" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="38" lineNum="105" parent="globals/BlockDisplay" pc="268438120" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="39" lineNum="135" parent="globals/BlockDisplay" pc="268438144" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="39" lineNum="136" parent="globals/BlockDisplay" pc="268438147" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="39" lineNum="137" parent="globals/BlockDisplay" pc="268438152" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="39" lineNum="138" parent="globals/BlockDisplay" pc="268438162" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="39" lineNum="139" parent="globals/BlockDisplay" pc="268438172" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="39" lineNum="141" parent="globals/BlockDisplay" pc="268438186" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="39" lineNum="142" parent="globals/BlockDisplay" pc="268438202" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="40" lineNum="151" parent="globals/BlockDisplay" pc="268438231" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="40" lineNum="152" parent="globals/BlockDisplay" pc="268438234" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="40" lineNum="153" parent="globals/BlockDisplay" pc="268438243" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/BlockDisplay.mc" id="40" lineNum="154" parent="globals/BlockDisplay" pc="268438276" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatTimer&gt;"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="41" lineNum="44" parent="globals/HomeViewDelegate" pc="268438288" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="41" lineNum="45" parent="globals/HomeViewDelegate" pc="268438290" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="42" lineNum="48" parent="globals/HomeViewDelegate" pc="268438303" symbol="onSelect"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="42" lineNum="49" parent="globals/HomeViewDelegate" pc="268438305" symbol="onSelect"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="43" lineNum="52" parent="globals/HomeViewDelegate" pc="268438307" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" id="43" lineNum="53" parent="globals/HomeViewDelegate" pc="268438309" symbol="onKey"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="26" parent="globals/StorageManager" pc="268438311" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="27" parent="globals/StorageManager" pc="268438314" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="28" parent="globals/StorageManager" pc="268438333" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="29" parent="globals/StorageManager" pc="268438339" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="30" parent="globals/StorageManager" pc="268438357" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="34" parent="globals/StorageManager" pc="268438362" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="35" parent="globals/StorageManager" pc="268438381" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="36" parent="globals/StorageManager" pc="268438402" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="37" parent="globals/StorageManager" pc="268438420" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="38" parent="globals/StorageManager" pc="268438428" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="39" parent="globals/StorageManager" pc="268438446" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="44" lineNum="43" parent="globals/StorageManager" pc="268438454" symbol="loadDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="45" lineNum="83" parent="globals/StorageManager" pc="268438457" symbol="saveDeviceId"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="45" lineNum="84" parent="globals/StorageManager" pc="268438459" symbol="saveDeviceId"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="46" lineNum="20" parent="globals/StorageManager" pc="268438480" symbol="saveDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="46" lineNum="21" parent="globals/StorageManager" pc="268438482" symbol="saveDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="46" lineNum="22" parent="globals/StorageManager" pc="268438502" symbol="saveDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="46" lineNum="23" parent="globals/StorageManager" pc="268438522" symbol="saveDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="47" lineNum="87" parent="globals/StorageManager" pc="268438544" symbol="getDeviceId"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="47" lineNum="88" parent="globals/StorageManager" pc="268438547" symbol="getDeviceId"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="47" lineNum="89" parent="globals/StorageManager" pc="268438566" symbol="getDeviceId"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="47" lineNum="90" parent="globals/StorageManager" pc="268438581" symbol="getDeviceId"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="47" lineNum="92" parent="globals/StorageManager" pc="268438587" symbol="getDeviceId"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="49" lineNum="46" parent="globals/StorageManager" pc="268438589" symbol="deleteDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="49" lineNum="47" parent="globals/StorageManager" pc="268438591" symbol="deleteDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="49" lineNum="48" parent="globals/StorageManager" pc="268438609" symbol="deleteDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="49" lineNum="49" parent="globals/StorageManager" pc="268438627" symbol="deleteDeviceToken"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="50" lineNum="66" parent="globals/StorageManager" pc="268438646" symbol="cacheWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="50" lineNum="68" parent="globals/StorageManager" pc="268438649" symbol="cacheWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="50" lineNum="69" parent="globals/StorageManager" pc="268438669" symbol="cacheWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="50" lineNum="70" parent="globals/StorageManager" pc="268438693" symbol="cacheWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="50" lineNum="71" parent="globals/StorageManager" pc="268438697" symbol="cacheWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="51" lineNum="75" parent="globals/StorageManager" pc="268438728" symbol="getCachedWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="51" lineNum="76" parent="globals/StorageManager" pc="268438731" symbol="getCachedWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="51" lineNum="77" parent="globals/StorageManager" pc="268438750" symbol="getCachedWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="51" lineNum="78" parent="globals/StorageManager" pc="268438765" symbol="getCachedWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="51" lineNum="80" parent="globals/StorageManager" pc="268438771" symbol="getCachedWorkout"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="52" parent="globals/StorageManager" pc="268438773" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="53" parent="globals/StorageManager" pc="268438776" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="54" parent="globals/StorageManager" pc="268438795" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="55" parent="globals/StorageManager" pc="268438801" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="58" parent="globals/StorageManager" pc="268438806" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="59" parent="globals/StorageManager" pc="268438821" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="60" parent="globals/StorageManager" pc="268438839" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" id="52" lineNum="63" parent="globals/StorageManager" pc="268438848" symbol="isTokenExpired"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="53" lineNum="20" parent="globals/ScanRxApp" pc="268438850" symbol="onStart"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="53" lineNum="24" parent="globals/ScanRxApp" pc="268438852" symbol="onStart"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="54" lineNum="33" parent="globals/ScanRxApp" pc="268438871" symbol="getInitialView"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="54" lineNum="36" parent="globals/ScanRxApp" pc="268438873" symbol="getInitialView"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="55" lineNum="16" parent="globals/ScanRxApp" pc="268438928" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="55" lineNum="17" parent="globals/ScanRxApp" pc="268438930" symbol="initialize"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="56" lineNum="27" parent="globals/ScanRxApp" pc="268438943" symbol="onStop"/>
+        <entry filename="/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" id="56" lineNum="30" parent="globals/ScanRxApp" pc="268438945" symbol="onStop"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="50" method="true" symbol="getSessionManager"/>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="13" object="true" symbol="StorageManager"/>
+        <entry id="33" method="true" symbol="previousBlock"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry field="true" id="23" symbol="&lt;globals/SessionManager/&lt;&gt;_notify&gt;"/>
+        <entry id="5" module="true" symbol="globals/StorageManager/&lt;statics&gt;"/>
+        <entry field="true" id="43" symbol="&lt;globals/BlockDisplay/&lt;&gt;_totalBlocks&gt;"/>
+        <entry id="52" method="true" symbol="onTimerTick"/>
+        <entry id="8390424" module="true" symbol="Storage"/>
+        <entry id="49" method="true" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatTimer&gt;"/>
+        <entry field="true" id="20" symbol="&lt;globals/SessionManager/&lt;&gt;_deviceToken&gt;"/>
+        <entry field="true" id="6" symbol="API_URL"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry id="35" method="true" symbol="&lt;globals/SessionManager/&lt;&gt;showCompletionScreen&gt;"/>
+        <entry id="17" method="true" symbol="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;"/>
+        <entry id="32" method="true" symbol="pollForWorkout"/>
+        <entry field="true" id="14" symbol="&lt;globals/HomeView/&lt;&gt;_title&gt;"/>
+        <entry field="true" id="64" symbol="AppName"/>
+        <entry field="true" id="39" symbol="&lt;globals/BlockDisplay/&lt;&gt;_elapsedSeconds&gt;"/>
+        <entry field="true" id="37" symbol="&lt;globals/BlockDisplay/&lt;&gt;_block&gt;"/>
+        <entry id="4" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8389594" symbol="headers"/>
+        <entry id="27" method="true" symbol="getTotalBlocks"/>
+        <entry id="30" method="true" symbol="onResultsResponse"/>
+        <entry id="47" method="true" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="8" object="true" symbol="BlockDisplay"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="11" object="true" symbol="ScanRxApp"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry id="44" method="true" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;"/>
+        <entry id="34" method="true" symbol="setNotifyCallback"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="29" method="true" symbol="nextBlock"/>
+        <entry id="8389275" method="true" symbol="getApp"/>
+        <entry id="28" method="true" symbol="&lt;globals/SessionManager/&lt;&gt;log&gt;"/>
+        <entry field="true" id="41" symbol="&lt;globals/BlockDisplay/&lt;&gt;_sessionManager&gt;"/>
+        <entry id="57" method="true" symbol="getCachedWorkout"/>
+        <entry id="55" method="true" symbol="cacheWorkout"/>
+        <entry id="36" method="true" symbol="submitResults"/>
+        <entry id="58" method="true" symbol="getDeviceId"/>
+        <entry id="8389098" method="true" symbol="onTap"/>
+        <entry id="59" method="true" symbol="isTokenExpired"/>
+        <entry id="10" object="true" symbol="HomeViewDelegate"/>
+        <entry id="8388637" module="true" symbol="Communications"/>
+        <entry id="61" method="true" symbol="saveDeviceId"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="56" method="true" symbol="deleteDeviceToken"/>
+        <entry field="true" id="42" symbol="&lt;globals/BlockDisplay/&lt;&gt;_timerHandle&gt;"/>
+        <entry id="45" method="true" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;"/>
+        <entry id="8389844" symbol="responseType"/>
+        <entry id="16" method="true" symbol="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;"/>
+        <entry id="9" object="true" symbol="HomeView"/>
+        <entry id="12" object="true" symbol="SessionManager"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="48" method="true" symbol="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;"/>
+        <entry id="8389619" method="true" symbol="onSelect"/>
+        <entry field="true" id="19" symbol="&lt;globals/SessionManager/&lt;&gt;_currentSession&gt;"/>
+        <entry id="8388645" module="true" symbol="Time"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="51" method="true" symbol="isTimerRunning"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="60" method="true" symbol="loadDeviceToken"/>
+        <entry field="true" id="63" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="25" method="true" symbol="getCurrentBlock"/>
+        <entry field="true" id="15" symbol="&lt;globals/BlockDelegate/&lt;&gt;_display&gt;"/>
+        <entry field="true" id="38" symbol="&lt;globals/BlockDisplay/&lt;&gt;_blockIndex&gt;"/>
+        <entry id="53" method="true" symbol="startTimer"/>
+        <entry field="true" id="21" symbol="&lt;globals/SessionManager/&lt;&gt;_isPolling&gt;"/>
+        <entry id="54" method="true" symbol="stopTimer"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="7" object="true" symbol="BlockDelegate"/>
+        <entry field="true" id="22" symbol="&lt;globals/SessionManager/&lt;&gt;_lastPollTime&gt;"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8389097" method="true" symbol="onKey"/>
+        <entry id="31" method="true" symbol="onSessionResponse"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="26" method="true" symbol="getCurrentBlockIndex"/>
+        <entry id="62" method="true" symbol="saveDeviceToken"/>
+        <entry field="true" id="18" symbol="&lt;globals/SessionManager/&lt;&gt;_currentBlockIndex&gt;"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry id="46" method="true" symbol="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;"/>
+        <entry field="true" id="24" symbol="&lt;globals/SessionManager/&lt;&gt;_workoutBlocks&gt;"/>
+        <entry field="true" id="40" symbol="&lt;globals/BlockDisplay/&lt;&gt;_isTimerRunning&gt;"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435705" name="dc" stackId="1" startPc="268435588"/>
+        <entry endPc="268435704" name="statusText" stackId="2" startPc="268435591"/>
+        <entry endPc="268435800" name="sessionManager" stackId="1" startPc="268435709"/>
+        <entry endPc="268435800" name="newDisplay" stackId="2" startPc="268435709"/>
+        <entry arg="true" endPc="268435825" name="display" stackId="1" startPc="268435802"/>
+        <entry arg="true" endPc="268435870" name="evt" stackId="1" startPc="268435826"/>
+        <entry endPc="268435965" name="sessionManager" stackId="1" startPc="268435874"/>
+        <entry endPc="268435965" name="newDisplay" stackId="2" startPc="268435874"/>
+        <entry arg="true" endPc="268436020" name="evt" stackId="1" startPc="268435967"/>
+        <entry endPc="268436020" name="key" stackId="2" startPc="268435970"/>
+        <entry arg="true" endPc="268436074" name="responseCode" stackId="1" startPc="268436021"/>
+        <entry arg="true" endPc="268436074" name="responseData" stackId="2" startPc="268436021"/>
+        <entry arg="true" endPc="268436242" name="blockResults" stackId="1" startPc="268436075"/>
+        <entry endPc="268436241" name="session" stackId="2" startPc="268436078"/>
+        <entry endPc="268436241" name="sessionId" stackId="3" startPc="268436078"/>
+        <entry endPc="268436241" name="url" stackId="4" startPc="268436078"/>
+        <entry endPc="268436241" name="body" stackId="5" startPc="268436078"/>
+        <entry endPc="268436241" name="options" stackId="6" startPc="268436078"/>
+        <entry arg="true" endPc="268436266" name="msg" stackId="1" startPc="268436243"/>
+        <entry endPc="268436365" name="blocks" stackId="1" startPc="268436279"/>
+        <entry endPc="268436416" name="blocks" stackId="1" startPc="268436382"/>
+        <entry arg="true" endPc="268436489" name="callback" stackId="1" startPc="268436478"/>
+        <entry arg="true" endPc="268436762" name="responseCode" stackId="1" startPc="268436490"/>
+        <entry arg="true" endPc="268436762" name="responseData" stackId="2" startPc="268436490"/>
+        <entry endPc="268436707" name="data" stackId="3" startPc="268436554"/>
+        <entry endPc="268436690" name="workout" stackId="4" startPc="268436601"/>
+        <entry endPc="268436992" name="url" stackId="1" startPc="268436901"/>
+        <entry endPc="268436992" name="options" stackId="2" startPc="268436901"/>
+        <entry arg="true" endPc="268437268" name="dc" stackId="1" startPc="268437068"/>
+        <entry endPc="268437267" name="headerY" stackId="2" startPc="268437071"/>
+        <entry endPc="268437267" name="headerText" stackId="3" startPc="268437071"/>
+        <entry endPc="268437264" name="block" stackId="4" startPc="268437156"/>
+        <entry endPc="268437264" name="blockType" stackId="5" startPc="268437156"/>
+        <entry arg="true" endPc="268437381" name="dc" stackId="1" startPc="268437277"/>
+        <entry endPc="268437380" name="controlY" stackId="2" startPc="268437280"/>
+        <entry arg="true" endPc="268437591" name="sessionManager" stackId="1" startPc="268437502"/>
+        <entry arg="true" endPc="268437873" name="params" stackId="1" startPc="268437592"/>
+        <entry endPc="268437873" name="details" stackId="2" startPc="268437595"/>
+        <entry arg="true" endPc="268437944" name="dc" stackId="1" startPc="268437874"/>
+        <entry arg="true" endPc="268438143" name="dc" stackId="1" startPc="268437945"/>
+        <entry endPc="268438142" name="detailsY" stackId="2" startPc="268437948"/>
+        <entry endPc="268438142" name="block" stackId="3" startPc="268437948"/>
+        <entry endPc="268438116" name="targetParams" stackId="4" startPc="268438040"/>
+        <entry endPc="268438116" name="lines" stackId="5" startPc="268438040"/>
+        <entry endPc="268438116" name="i" stackId="6" startPc="268438078"/>
+        <entry arg="true" endPc="268438230" name="dc" stackId="1" startPc="268438144"/>
+        <entry endPc="268438229" name="timerY" stackId="2" startPc="268438147"/>
+        <entry endPc="268438229" name="minutes" stackId="3" startPc="268438147"/>
+        <entry endPc="268438229" name="seconds" stackId="4" startPc="268438147"/>
+        <entry endPc="268438229" name="timerText" stackId="5" startPc="268438147"/>
+        <entry arg="true" endPc="268438287" name="minutes" stackId="1" startPc="268438231"/>
+        <entry arg="true" endPc="268438287" name="seconds" stackId="2" startPc="268438231"/>
+        <entry endPc="268438287" name="minStr" stackId="3" startPc="268438234"/>
+        <entry endPc="268438287" name="secStr" stackId="4" startPc="268438234"/>
+        <entry arg="true" endPc="268438310" name="evt" stackId="1" startPc="268438307"/>
+        <entry endPc="268438456" name="token" stackId="1" startPc="268438314"/>
+        <entry endPc="268438456" name="expiresAt" stackId="2" startPc="268438314"/>
+        <entry endPc="268438450" name="now" stackId="3" startPc="268438402"/>
+        <entry arg="true" endPc="268438479" name="deviceId" stackId="1" startPc="268438457"/>
+        <entry arg="true" endPc="268438543" name="token" stackId="1" startPc="268438480"/>
+        <entry arg="true" endPc="268438543" name="expiresAt" stackId="2" startPc="268438480"/>
+        <entry endPc="268438588" name="id" stackId="1" startPc="268438547"/>
+        <entry arg="true" endPc="268438727" name="workoutJson" stackId="1" startPc="268438646"/>
+        <entry endPc="268438721" name="ex" stackId="2" startPc="268438693"/>
+        <entry endPc="268438772" name="cached" stackId="1" startPc="268438731"/>
+        <entry endPc="268438849" name="expiresAt" stackId="1" startPc="268438776"/>
+        <entry endPc="268438844" name="now" stackId="2" startPc="268438821"/>
+        <entry arg="true" endPc="268438870" name="state" stackId="1" startPc="268438850"/>
+        <entry arg="true" endPc="268438963" name="state" stackId="1" startPc="268438943"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="58" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/HomeView" offset="208" parentId="globals" symbolId="HomeView" type="class"/>
+        <dataEntry label="globals/BlockDelegate" offset="270" parentId="globals" symbolId="BlockDelegate" type="class"/>
+        <dataEntry label="globals/SessionManager" offset="359" parentId="globals" symbolId="SessionManager" type="class"/>
+        <dataEntry label="globals/Rez" offset="574" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/BlockDisplay" offset="618" parentId="globals" symbolId="BlockDisplay" type="class"/>
+        <dataEntry label="globals/HomeViewDelegate" offset="833" parentId="globals" symbolId="HomeViewDelegate" type="class"/>
+        <dataEntry label="globals/StorageManager" offset="895" parentId="globals" symbolId="StorageManager" type="class"/>
+        <dataEntry label="globals/StorageManager/&lt;statics&gt;" offset="943" parentId="StorageManager" symbolId="&lt;statics&gt;" type="module"/>
+        <dataEntry label="globals/ScanRxApp" offset="1037" parentId="globals" symbolId="ScanRxApp" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="1108" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="1143" parentId="Rez" symbolId="Strings" type="module"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435480" name="getApp" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435492" name="&lt;init&gt;" parent="HomeView" startPc="268435481">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435504" name="&lt;init&gt;" parent="BlockDelegate" startPc="268435493">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="SessionManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435524" name="&lt;init&gt;" parent="Rez" startPc="268435505">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435536" name="&lt;init&gt;" parent="BlockDisplay" startPc="268435525">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435548" name="&lt;init&gt;" parent="HomeViewDelegate" startPc="268435537">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="StorageManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="globals/StorageManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435560" name="&lt;init&gt;" parent="ScanRxApp" startPc="268435549">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435587" name="initialize" parent="HomeView" startPc="268435561">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435705" name="onUpdate" parent="HomeView" startPc="268435588">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268435801" name="&lt;globals/BlockDelegate/&lt;&gt;previousBlock&gt;" parent="BlockDelegate" startPc="268435706">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435825" name="initialize" parent="BlockDelegate" startPc="268435802">
+            <param id="display"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435870" name="onTap" parent="BlockDelegate" startPc="268435826">
+            <param id="evt"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268435966" name="&lt;globals/BlockDelegate/&lt;&gt;nextBlock&gt;" parent="BlockDelegate" startPc="268435871">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436020" name="onKey" parent="BlockDelegate" startPc="268435967">
+            <param id="evt"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436074" name="onResultsResponse" parent="SessionManager" startPc="268436021">
+            <param id="responseCode"/>
+            <param id="responseData"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436242" name="submitResults" parent="SessionManager" startPc="268436075">
+            <param id="blockResults"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436266" name="&lt;globals/SessionManager/&lt;&gt;log&gt;" parent="SessionManager" startPc="268436243">
+            <param id="msg"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436369" name="nextBlock" parent="SessionManager" startPc="268436267">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436421" name="getCurrentBlock" parent="SessionManager" startPc="268436370">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436429" name="getCurrentBlockIndex" parent="SessionManager" startPc="268436422">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436460" name="previousBlock" parent="SessionManager" startPc="268436430">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268436477" name="&lt;globals/SessionManager/&lt;&gt;showCompletionScreen&gt;" parent="SessionManager" startPc="268436461">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436489" name="setNotifyCallback" parent="SessionManager" startPc="268436478">
+            <param id="callback"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436762" name="onSessionResponse" parent="SessionManager" startPc="268436490">
+            <param id="responseCode"/>
+            <param id="responseData"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436879" name="initialize" parent="SessionManager" startPc="268436763">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436996" name="pollForWorkout" parent="SessionManager" startPc="268436880">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437024" name="getTotalBlocks" parent="SessionManager" startPc="268436997">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437067" name="stopTimer" parent="BlockDisplay" startPc="268437025">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268437268" name="&lt;globals/BlockDisplay/&lt;&gt;drawBlockHeader&gt;" parent="BlockDisplay" startPc="268437068">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437276" name="getSessionManager" parent="BlockDisplay" startPc="268437269">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268437381" name="&lt;globals/BlockDisplay/&lt;&gt;drawControls&gt;" parent="BlockDisplay" startPc="268437277">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437410" name="onTimerTick" parent="BlockDisplay" startPc="268437382">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437493" name="startTimer" parent="BlockDisplay" startPc="268437411">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437501" name="isTimerRunning" parent="BlockDisplay" startPc="268437494">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437591" name="initialize" parent="BlockDisplay" startPc="268437502">
+            <param id="sessionManager"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268437873" name="&lt;globals/BlockDisplay/&lt;&gt;formatBlockDetails&gt;" parent="BlockDisplay" startPc="268437592">
+            <param id="params"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437944" name="onUpdate" parent="BlockDisplay" startPc="268437874">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268438143" name="&lt;globals/BlockDisplay/&lt;&gt;drawBlockDetails&gt;" parent="BlockDisplay" startPc="268437945">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268438230" name="&lt;globals/BlockDisplay/&lt;&gt;drawTimer&gt;" parent="BlockDisplay" startPc="268438144">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="private" endPc="268438287" name="&lt;globals/BlockDisplay/&lt;&gt;formatTimer&gt;" parent="BlockDisplay" startPc="268438231">
+            <param id="minutes"/>
+            <param id="seconds"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438302" name="initialize" parent="HomeViewDelegate" startPc="268438288">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438306" name="onSelect" parent="HomeViewDelegate" startPc="268438303">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438310" name="onKey" parent="HomeViewDelegate" startPc="268438307">
+            <param id="evt"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438456" name="loadDeviceToken" parent="StorageManager" startPc="268438311">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438479" name="saveDeviceId" parent="StorageManager" startPc="268438457">
+            <param id="deviceId"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438543" name="saveDeviceToken" parent="StorageManager" startPc="268438480">
+            <param id="token"/>
+            <param id="expiresAt"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438588" name="getDeviceId" parent="StorageManager" startPc="268438544">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="initialize" parent="StorageManager">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438645" name="deleteDeviceToken" parent="StorageManager" startPc="268438589">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438727" name="cacheWorkout" parent="StorageManager" startPc="268438646">
+            <param id="workoutJson"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438772" name="getCachedWorkout" parent="StorageManager" startPc="268438728">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438849" name="isTokenExpired" parent="StorageManager" startPc="268438773">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438870" name="onStart" parent="ScanRxApp" startPc="268438850">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438927" name="getInitialView" parent="ScanRxApp" startPc="268438871">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438942" name="initialize" parent="ScanRxApp" startPc="268438928">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438963" name="onStop" parent="ScanRxApp" startPc="268438943">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

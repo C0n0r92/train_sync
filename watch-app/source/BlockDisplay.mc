@@ -1,29 +1,34 @@
-using Toybox.WatchUi;
-using Toybox.Graphics;
-using Toybox.System;
-using Toybox.Timer;
+//
+// ScanRx Watch App - Block Display View
+//
+
+import Toybox.WatchUi;
+import Toybox.Graphics;
+import Toybox.System;
+import Toybox.Timer;
+import Toybox.Lang;
 
 class BlockDisplay extends WatchUi.View {
-    var block;
-    var blockIndex;
-    var totalBlocks;
-    var elapsedSeconds;
-    var timerHandle;
-    var isTimerRunning;
-    var sessionManager;
+    private var _block as Dictionary or Null;
+    private var _blockIndex as Number;
+    private var _totalBlocks as Number;
+    private var _elapsedSeconds as Number;
+    private var _timerHandle as Timer.Timer or Null;
+    private var _isTimerRunning as Boolean;
+    private var _sessionManager as SessionManager;
 
-    function initialize(sessionManager) {
+    public function initialize(sessionManager as SessionManager) {
         View.initialize();
-        self.sessionManager = sessionManager;
-        block = sessionManager.getCurrentBlock();
-        blockIndex = sessionManager.currentBlockIndex;
-        totalBlocks = sessionManager.workoutBlocks.size();
-        elapsedSeconds = 0;
-        isTimerRunning = false;
-        timerHandle = null;
+        _sessionManager = sessionManager;
+        _block = sessionManager.getCurrentBlock();
+        _blockIndex = sessionManager.getCurrentBlockIndex();
+        _totalBlocks = sessionManager.getTotalBlocks();
+        _elapsedSeconds = 0;
+        _isTimerRunning = false;
+        _timerHandle = null;
     }
 
-    function onUpdate(dc) {
+    public function onUpdate(dc as Dc) as Void {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
         dc.clear();
 
@@ -40,9 +45,9 @@ class BlockDisplay extends WatchUi.View {
         drawControls(dc);
     }
 
-    function drawBlockHeader(dc) {
+    private function drawBlockHeader(dc as Dc) as Void {
         var headerY = 20;
-        var headerText = "Block " + (blockIndex + 1) + "/" + totalBlocks;
+        var headerText = "Block " + (_blockIndex + 1) + "/" + _totalBlocks;
 
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
         dc.drawText(
@@ -54,68 +59,83 @@ class BlockDisplay extends WatchUi.View {
         );
 
         // Draw block type
-        var blockType = block["type"];
-        dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
-        dc.drawText(
-            dc.getWidth() / 2,
-            headerY + 40,
-            Graphics.FONT_MEDIUM,
-            blockType.toUpper(),
-            Graphics.TEXT_JUSTIFY_CENTER
-        );
-    }
-
-    function drawBlockDetails(dc) {
-        var detailsY = 100;
-        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
-
-        // Display block-specific details
-        var targetParams = block["target_params"];
-        var detailText = formatBlockDetails(targetParams);
-
-        var lines = detailText;
-        for (var i = 0; i < lines.size(); i++) {
+        if (_block != null) {
+            var block = _block as Dictionary;
+            var blockType = "UNKNOWN";
+            if (block.hasKey("type") && block["type"] != null) {
+                blockType = (block["type"] as String).toUpper();
+            }
+            dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
             dc.drawText(
-                20,
-                detailsY + (i * 25),
-                Graphics.FONT_SMALL,
-                lines[i],
-                Graphics.TEXT_JUSTIFY_LEFT
+                dc.getWidth() / 2,
+                headerY + 40,
+                Graphics.FONT_MEDIUM,
+                blockType,
+                Graphics.TEXT_JUSTIFY_CENTER
             );
         }
     }
 
-    function formatBlockDetails(params) {
-        var details = [];
+    private function drawBlockDetails(dc as Dc) as Void {
+        var detailsY = 100;
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
 
-        if (params == null) {
-            return ["No target params"];
+        if (_block == null) {
+            dc.drawText(20, detailsY, Graphics.FONT_SMALL, "No block data", Graphics.TEXT_JUSTIFY_LEFT);
+            return;
         }
 
-        // Bug suspect: Doesn't handle missing fields gracefully
-        if (params["duration"] != null) {
-            details.push("Duration: " + params["duration"] + "s");
+        var block = _block as Dictionary;
+
+        // Display block-specific details
+        if (block.hasKey("target_params") && block["target_params"] != null) {
+            var targetParams = block["target_params"] as Dictionary;
+            var lines = formatBlockDetails(targetParams);
+
+            for (var i = 0; i < lines.size(); i++) {
+                dc.drawText(
+                    20,
+                    detailsY + (i * 25),
+                    Graphics.FONT_SMALL,
+                    lines[i] as String,
+                    Graphics.TEXT_JUSTIFY_LEFT
+                );
+            }
+        } else {
+            dc.drawText(20, detailsY, Graphics.FONT_SMALL, "No target params", Graphics.TEXT_JUSTIFY_LEFT);
+        }
+    }
+
+    private function formatBlockDetails(params as Dictionary) as Array<String> {
+        var details = [] as Array<String>;
+
+        if (params.hasKey("duration") && params["duration"] != null) {
+            details.add("Duration: " + params["duration"] + "s");
         }
 
-        if (params["distance"] != null) {
-            details.push("Distance: " + params["distance"] + "km");
+        if (params.hasKey("distance") && params["distance"] != null) {
+            details.add("Distance: " + params["distance"] + "km");
         }
 
-        if (params["reps"] != null) {
-            details.push("Reps: " + params["reps"]);
+        if (params.hasKey("reps") && params["reps"] != null) {
+            details.add("Reps: " + params["reps"]);
         }
 
-        if (params["pace_target"] != null) {
-            details.push("Pace: " + params["pace_target"] + "/km");
+        if (params.hasKey("pace_target") && params["pace_target"] != null) {
+            details.add("Pace: " + params["pace_target"] + "/km");
+        }
+
+        if (details.size() == 0) {
+            details.add("No target params");
         }
 
         return details;
     }
 
-    function drawTimer(dc) {
+    private function drawTimer(dc as Dc) as Void {
         var timerY = 200;
-        var minutes = elapsedSeconds / 60;
-        var seconds = elapsedSeconds % 60;
+        var minutes = _elapsedSeconds / 60;
+        var seconds = _elapsedSeconds % 60;
         var timerText = formatTimer(minutes, seconds);
 
         dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_BLACK);
@@ -128,17 +148,17 @@ class BlockDisplay extends WatchUi.View {
         );
     }
 
-    function formatTimer(minutes, seconds) {
+    private function formatTimer(minutes as Number, seconds as Number) as String {
         var minStr = minutes.toString();
         var secStr = (seconds < 10) ? "0" + seconds.toString() : seconds.toString();
         return minStr + ":" + secStr;
     }
 
-    function drawControls(dc) {
+    private function drawControls(dc as Dc) as Void {
         var controlY = dc.getHeight() - 40;
         dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_BLACK);
 
-        if (isTimerRunning) {
+        if (_isTimerRunning) {
             dc.drawText(
                 dc.getWidth() / 2,
                 controlY,
@@ -157,81 +177,91 @@ class BlockDisplay extends WatchUi.View {
         }
     }
 
-    function startTimer() {
-        if (!isTimerRunning) {
-            isTimerRunning = true;
-            timerHandle = new Timer.Timer();
-            timerHandle.start(method(:onTimerTick), 1000, true);
+    public function startTimer() as Void {
+        if (!_isTimerRunning) {
+            _isTimerRunning = true;
+            _timerHandle = new Timer.Timer();
+            _timerHandle.start(method(:onTimerTick), 1000, true);
         }
     }
 
-    function stopTimer() {
-        if (isTimerRunning && timerHandle != null) {
-            isTimerRunning = false;
-            timerHandle.stop();
+    public function stopTimer() as Void {
+        if (_isTimerRunning && _timerHandle != null) {
+            _isTimerRunning = false;
+            _timerHandle.stop();
         }
     }
 
-    function onTimerTick() {
-        elapsedSeconds += 1;
+    public function onTimerTick() as Void {
+        _elapsedSeconds += 1;
         WatchUi.requestUpdate();
     }
 
-    function nextBlock() {
-        stopTimer();
-        sessionManager.nextBlock();
-        WatchUi.switchToView(
-            new BlockDisplay(sessionManager),
-            new BlockDelegate(sessionManager),
-            WatchUi.SLIDE_LEFT
-        );
+    public function isTimerRunning() as Boolean {
+        return _isTimerRunning;
     }
 
-    function previousBlock() {
-        stopTimer();
-        sessionManager.previousBlock();
-        WatchUi.switchToView(
-            new BlockDisplay(sessionManager),
-            new BlockDelegate(sessionManager),
-            WatchUi.SLIDE_RIGHT
-        );
+    public function getSessionManager() as SessionManager {
+        return _sessionManager;
     }
 }
 
-class BlockDelegate extends WatchUi.InputDelegate {
-    var display;
-    var sessionManager;
+class BlockDelegate extends WatchUi.BehaviorDelegate {
+    private var _display as BlockDisplay;
 
-    function initialize(sessionManager) {
-        InputDelegate.initialize();
-        self.sessionManager = sessionManager;
+    public function initialize(display as BlockDisplay) {
+        BehaviorDelegate.initialize();
+        _display = display;
     }
 
-    function onKey(keyEvent) {
-        var key = keyEvent.getKey();
+    public function onKey(evt as KeyEvent) as Boolean {
+        var key = evt.getKey();
 
-        // Bug suspect: Double-tap skips a block
         if (key == WatchUi.KEY_ENTER) {
-            display.nextBlock();
+            nextBlock();
             return true;
         }
 
         if (key == WatchUi.KEY_ESC) {
-            display.previousBlock();
+            previousBlock();
             return true;
         }
 
         return false;
     }
 
-    function onTap(clickEvent) {
+    public function onTap(evt as ClickEvent) as Boolean {
         // Toggle timer
-        if (display.isTimerRunning) {
-            display.stopTimer();
+        if (_display.isTimerRunning()) {
+            _display.stopTimer();
         } else {
-            display.startTimer();
+            _display.startTimer();
         }
 
         return true;
+    }
+
+    private function nextBlock() as Void {
+        _display.stopTimer();
+        var sessionManager = _display.getSessionManager();
+        sessionManager.nextBlock();
+        var newDisplay = new BlockDisplay(sessionManager);
+        WatchUi.switchToView(
+            newDisplay,
+            new BlockDelegate(newDisplay),
+            WatchUi.SLIDE_LEFT
+        );
+    }
+
+    private function previousBlock() as Void {
+        _display.stopTimer();
+        var sessionManager = _display.getSessionManager();
+        sessionManager.previousBlock();
+        var newDisplay = new BlockDisplay(sessionManager);
+        WatchUi.switchToView(
+            newDisplay,
+            new BlockDelegate(newDisplay),
+            WatchUi.SLIDE_RIGHT
+        );
     }
 }

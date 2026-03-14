@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest version="1.0">
-    <application>
-        <appName>ScanRx</appName>
-        <version>0.1.0</version>
-        <entry>Main</entry>
-        <permissions>
-            <permission>Communications</permission>
-            <permission>SensorHistory</permission>
-        </permissions>
-        <supports>
-            <device id="d2delta"/>
-            <device id="fenix5xplus"/>
-            <device id="fr745"/>
-            <device id="fr945"/>
-            <device id="fenix6"/>
-            <!-- Add more device types as needed -->
-        </supports>
-    </application>
-</manifest>
+<?xml version="1.0"?>
+<iq:manifest xmlns:iq="http://www.garmin.com/xml/connectiq" version="1">
+    <iq:application entry="ScanRxApp" id="98153CD986EFAB64CDA0954834618413" launcherIcon="@Drawables.LauncherIcon" minSdkVersion="3.0.0" name="@Strings.AppName" type="watch-app">
+        <iq:products>
+            <iq:product id="fenix7"/>
+            <iq:product id="fenix7s"/>
+            <iq:product id="fenix7x"/>
+            <iq:product id="epix2"/>
+            <iq:product id="fr955"/>
+            <iq:product id="fr965"/>
+            <iq:product id="venu3"/>
+            <iq:product id="vivoactive5"/>
+        </iq:products>
+        <iq:permissions>
+            <iq:uses-permission id="Communications"/>
+            <iq:uses-permission id="Sensor"/>
+        </iq:permissions>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+    </iq:application>
+</iq:manifest>

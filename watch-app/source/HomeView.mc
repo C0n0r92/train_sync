@@ -1,15 +1,20 @@
-using Toybox.WatchUi;
-using Toybox.Graphics;
+//
+// ScanRx Watch App - Home View
+//
+
+import Toybox.WatchUi;
+import Toybox.Graphics;
+import Toybox.Lang;
 
 class HomeView extends WatchUi.View {
-    var title;
+    private var _title as String;
 
-    function initialize() {
+    public function initialize() {
         View.initialize();
-        title = "ScanRx";
+        _title = "ScanRx";
     }
 
-    function onUpdate(dc) {
+    public function onUpdate(dc as Dc) as Void {
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
         dc.clear();
 
@@ -18,7 +23,7 @@ class HomeView extends WatchUi.View {
             dc.getWidth() / 2,
             40,
             Graphics.FONT_LARGE,
-            title,
+            _title,
             Graphics.TEXT_JUSTIFY_CENTER
         );
 
@@ -35,16 +40,16 @@ class HomeView extends WatchUi.View {
     }
 }
 
-class HomeViewDelegate extends WatchUi.InputDelegate {
-    function initialize() {
-        InputDelegate.initialize();
+class HomeViewDelegate extends WatchUi.BehaviorDelegate {
+    public function initialize() {
+        BehaviorDelegate.initialize();
     }
 
-    function onTap(clickEvent) {
+    public function onSelect() as Boolean {
         return true;
     }
 
-    function onKey(keyEvent) {
+    public function onKey(evt as KeyEvent) as Boolean {
         return false;
     }
 }

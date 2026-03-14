@@ -1,0 +1,179 @@
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [WatchUi,5,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Graphics,6,14,22]; ]
+import Toybox.Graphics;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Lang,7,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 9; @symbol_classdef = [HomeView,9,6,14]; @symbol_extends<0> = [WatchUi,9,23,30]; @symbol_extends<1> = [View,9,31,35]; ]
+class HomeView extends WatchUi.View {
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 9; ]
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 9; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 10; @position = 16; @symbol_vardef = [_title,10,16,22]; @symbol_type<0> = [String,10,26,32]; ]
+    private
+    var _title as String;
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 12; @symbol_functiondef = [initialize,12,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_12_33_15_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 13 8 ]
+        symbol [ View %tmp.2 13 8 12 ];
+        %tmp.2 = getv ? :View;
+        symbol [ initialize %tmp.3 13 13 23 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 14 8 ]
+        %tmp.4 = "ScanRx";
+        symbol [ _title ? 14 8 14 ];
+        putv self :_title %tmp.4;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_12_33_15_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 17; @symbol_functiondef = [onUpdate,17,20,28]; @symbol_param<0> = [dc,17,29,31]; @symbol_param<0>_type<0> = [Dc,17,35,37]; ]
+    public
+    function onUpdate(dc as Dc) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_17_47_40_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 18 8 ]
+        %tmp.1 = lgetv %dc;
+        symbol [ dc %tmp.1 18 8 10 ];
+        symbol [ setColor %tmp.2 18 11 19 ];
+        %tmp.2 = getv function %tmp.1 :setColor;
+        symbol [ Graphics %tmp.3 18 20 28 ];
+        %tmp.3 = getm $.Toybox.Graphics;
+        symbol [ COLOR_WHITE %tmp.4 18 29 40 ];
+        %tmp.4 = getv %tmp.3 :COLOR_WHITE;
+        symbol [ Graphics %tmp.5 18 42 50 ];
+        %tmp.5 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.6 18 51 62 ];
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 19 8 ]
+        %tmp.7 = lgetv %dc;
+        symbol [ dc %tmp.7 19 8 10 ];
+        symbol [ clear %tmp.8 19 11 16 ];
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 22 8 ]
+        %tmp.9 = lgetv %dc;
+        symbol [ dc %tmp.9 22 8 10 ];
+        symbol [ drawText %tmp.10 22 11 19 ];
+        %tmp.10 = getv function %tmp.9 :drawText;
+        %tmp.11 = lgetv %dc;
+        symbol [ dc %tmp.11 23 12 14 ];
+        symbol [ getWidth %tmp.12 23 15 23 ];
+        %tmp.12 = getv function %tmp.11 :getWidth;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = 2;
+        %tmp.15 = div %tmp.13 %tmp.14;
+        %tmp.16 = 40;
+        symbol [ Graphics %tmp.17 25 12 20 ];
+        %tmp.17 = getm $.Toybox.Graphics;
+        symbol [ FONT_LARGE %tmp.18 25 21 31 ];
+        %tmp.18 = getv %tmp.17 :FONT_LARGE;
+        symbol [ _title %tmp.20 26 12 18 ];
+        %tmp.20 = getv ? :_title;
+        symbol [ Graphics %tmp.21 27 12 20 ];
+        %tmp.21 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.22 27 21 40 ];
+        %tmp.22 = getv %tmp.21 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.9 %tmp.10(%tmp.15, %tmp.16, %tmp.18, %tmp.20, %tmp.22);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 31 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_17_47_40_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_17_47_40_4_stop" ]
+        %statusText.1 = local;
+        symbol [ statusText %statusText.1 31 12 22 ];
+        %tmp.23 = "Loading workout...";
+        lputv %statusText.1 %tmp.23;
+        symbol [ statusText %statusText.1 31 12 22 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 32 8 ]
+        %tmp.24 = lgetv %dc;
+        symbol [ dc %tmp.24 32 8 10 ];
+        symbol [ setColor %tmp.25 32 11 19 ];
+        %tmp.25 = getv function %tmp.24 :setColor;
+        symbol [ Graphics %tmp.26 32 20 28 ];
+        %tmp.26 = getm $.Toybox.Graphics;
+        symbol [ COLOR_LT_GRAY %tmp.27 32 29 42 ];
+        %tmp.27 = getv %tmp.26 :COLOR_LT_GRAY;
+        symbol [ Graphics %tmp.28 32 44 52 ];
+        %tmp.28 = getm $.Toybox.Graphics;
+        symbol [ COLOR_BLACK %tmp.29 32 53 64 ];
+        %tmp.29 = getv %tmp.28 :COLOR_BLACK;
+        invoke %tmp.24 %tmp.25(%tmp.27, %tmp.29);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 33 8 ]
+        %tmp.30 = lgetv %dc;
+        symbol [ dc %tmp.30 33 8 10 ];
+        symbol [ drawText %tmp.31 33 11 19 ];
+        %tmp.31 = getv function %tmp.30 :drawText;
+        %tmp.32 = lgetv %dc;
+        symbol [ dc %tmp.32 34 12 14 ];
+        symbol [ getWidth %tmp.33 34 15 23 ];
+        %tmp.33 = getv function %tmp.32 :getWidth;
+        %tmp.34 = invoke %tmp.32 %tmp.33();
+        %tmp.35 = 2;
+        %tmp.36 = div %tmp.34 %tmp.35;
+        %tmp.37 = lgetv %dc;
+        symbol [ dc %tmp.37 35 12 14 ];
+        symbol [ getHeight %tmp.38 35 15 24 ];
+        %tmp.38 = getv function %tmp.37 :getHeight;
+        %tmp.39 = invoke %tmp.37 %tmp.38();
+        %tmp.40 = 2;
+        %tmp.41 = div %tmp.39 %tmp.40;
+        symbol [ Graphics %tmp.42 36 12 20 ];
+        %tmp.42 = getm $.Toybox.Graphics;
+        symbol [ FONT_SMALL %tmp.43 36 21 31 ];
+        %tmp.43 = getv %tmp.42 :FONT_SMALL;
+        %tmp.44 = lgetv %statusText.1;
+        symbol [ statusText %tmp.44 37 12 22 ];
+        symbol [ Graphics %tmp.45 38 12 20 ];
+        %tmp.45 = getm $.Toybox.Graphics;
+        symbol [ TEXT_JUSTIFY_CENTER %tmp.46 38 21 40 ];
+        %tmp.46 = getv %tmp.45 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.30 %tmp.31(%tmp.36, %tmp.41, %tmp.43, %tmp.44, %tmp.46);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_17_47_40_4_stop:
+    }
+}
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 43; @symbol_classdef = [HomeViewDelegate,43,6,22]; @symbol_extends<0> = [WatchUi,43,31,38]; @symbol_extends<1> = [BehaviorDelegate,43,39,55]; ]
+class HomeViewDelegate extends WatchUi.BehaviorDelegate {
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 43; ]
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 43; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 44; @symbol_functiondef = [initialize,44,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_44_33_46_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 45 8 ]
+        symbol [ BehaviorDelegate %tmp.2 45 8 24 ];
+        %tmp.2 = getv ? :BehaviorDelegate;
+        symbol [ initialize %tmp.3 45 25 35 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_44_33_46_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 48; @symbol_functiondef = [onSelect,48,20,28]; @symbol_return<0> = [Boolean,48,34,41]; ]
+    public
+    function onSelect() as Boolean {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_48_42_50_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 49 8 ]
+        %tmp.1 = true;
+        ret %tmp.1;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_48_42_50_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 52; @symbol_functiondef = [onKey,52,20,25]; @symbol_param<0> = [evt,52,26,29]; @symbol_param<0>_type<0> = [KeyEvent,52,33,41]; @symbol_return<0> = [Boolean,52,46,53]; ]
+    public
+    function onKey(evt as KeyEvent) as Boolean {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_52_54_54_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc" 53 8 ]
+        %tmp.1 = false;
+        ret %tmp.1;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_HomeView_mc_52_54_54_4_stop:
+    }
+}
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/HomeView.mc"; @line = 5; ]
+<init> {
+}

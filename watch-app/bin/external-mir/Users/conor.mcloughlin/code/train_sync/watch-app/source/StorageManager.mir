@@ -1,0 +1,462 @@
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 5; @symbol_importdef<0> = [Toybox,5,7,13]; @symbol_importdef<1> = [Application,5,14,25]; ]
+import Toybox.Application;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Application,6,14,25]; @symbol_importdef<2> = [Storage,6,26,33]; ]
+import Toybox.Application.Storage;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Lang,7,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [System,8,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [Time,9,14,18]; ]
+import Toybox.Time;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 11; @symbol_classdef = [StorageManager,11,6,20]; ]
+class StorageManager {
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 11; ]
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 12; @position = 25; @symbol_constdef = [STORAGE_KEY_TOKEN,12,25,42]; ]
+    private static
+    const STORAGE_KEY_TOKEN = "device_token";
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 13; @position = 25; @symbol_constdef = [STORAGE_KEY_EXPIRES,13,25,44]; ]
+    private static
+    const STORAGE_KEY_EXPIRES = "token_expires_at";
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 14; @position = 25; @symbol_constdef = [STORAGE_KEY_CACHED_WORKOUT,14,25,51]; ]
+    private static
+    const STORAGE_KEY_CACHED_WORKOUT = "cached_workout";
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 15; @position = 25; @symbol_constdef = [STORAGE_KEY_DEVICE_ID,15,25,46]; ]
+    private static
+    const STORAGE_KEY_DEVICE_ID = "device_id";
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 17; @symbol_functiondef = [initialize,17,20,30]; ]
+    public
+    function initialize() as Void {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 20; @symbol_functiondef = [saveDeviceToken,20,27,42]; @symbol_param<0> = [token,20,43,48]; @symbol_param<0>_type<0> = [String,20,52,58]; @symbol_param<1> = [expiresAt,20,60,69]; @symbol_param<1>_type<0> = [Number,20,73,79]; ]
+    public static
+    function saveDeviceToken(token as String, expiresAt as Number) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_20_89_24_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 21 8 ]
+        symbol [ Storage %tmp.1 21 8 15 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ setValue %tmp.2 21 16 24 ];
+        %tmp.2 = getv function %tmp.1 :setValue;
+        symbol [ STORAGE_KEY_TOKEN %tmp.4 21 25 42 ];
+        %tmp.4 = getv ? :STORAGE_KEY_TOKEN;
+        %tmp.5 = lgetv %token;
+        symbol [ token %tmp.5 21 44 49 ];
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.5);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 22 8 ]
+        symbol [ Storage %tmp.6 22 8 15 ];
+        %tmp.6 = getm $.Toybox.Application.Storage;
+        symbol [ setValue %tmp.7 22 16 24 ];
+        %tmp.7 = getv function %tmp.6 :setValue;
+        symbol [ STORAGE_KEY_EXPIRES %tmp.9 22 25 44 ];
+        %tmp.9 = getv ? :STORAGE_KEY_EXPIRES;
+        %tmp.10 = lgetv %expiresAt;
+        symbol [ expiresAt %tmp.10 22 46 55 ];
+        invoke %tmp.6 %tmp.7(%tmp.9, %tmp.10);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 23 8 ]
+        symbol [ System %tmp.11 23 8 14 ];
+        %tmp.11 = getm $.Toybox.System;
+        symbol [ println %tmp.12 23 15 22 ];
+        %tmp.12 = getv function %tmp.11 :println;
+        %tmp.13 = "[ScanRx] Token saved, expires: ";
+        %tmp.14 = lgetv %expiresAt;
+        symbol [ expiresAt %tmp.14 23 59 68 ];
+        %tmp.15 = add %tmp.13 %tmp.14;
+        invoke %tmp.11 %tmp.12(%tmp.15);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_20_89_24_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 26; @symbol_functiondef = [loadDeviceToken,26,27,42]; @symbol_return<0> = [String,26,48,54]; ]
+    public static
+    function loadDeviceToken() as String or Null {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_26_63_44_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 27 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_26_63_44_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_26_63_44_4_stop" ]
+        %token.1 = local;
+        symbol [ token %token.1 27 12 17 ];
+        symbol [ Storage %tmp.1 27 20 27 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ getValue %tmp.2 27 28 36 ];
+        %tmp.2 = getv function %tmp.1 :getValue;
+        symbol [ STORAGE_KEY_TOKEN %tmp.4 27 37 54 ];
+        %tmp.4 = getv ? :STORAGE_KEY_TOKEN;
+        %tmp.5 = invoke %tmp.1 %tmp.2(%tmp.4);
+        lputv %token.1 %tmp.5;
+        symbol [ token %token.1 27 12 17 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 28 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_28_8_31_8_if_stmt:
+        %tmp.6 = lgetv %token.1;
+        symbol [ token %tmp.6 28 12 17 ];
+        %tmp.7 = null;
+        %tmp.8 = eq %tmp.6 %tmp.7;
+        bf %tmp.8 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_28_8_31_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_28_8_31_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_28_27_31_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 29 12 ]
+        symbol [ System %tmp.9 29 12 18 ];
+        %tmp.9 = getm $.Toybox.System;
+        symbol [ println %tmp.10 29 19 26 ];
+        %tmp.10 = getv function %tmp.9 :println;
+        %tmp.11 = "[ScanRx] No device token found";
+        invoke %tmp.9 %tmp.10(%tmp.11);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 30 12 ]
+        %tmp.12 = null;
+        ret %tmp.12;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_28_27_31_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_28_8_31_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_28_8_31_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 34 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_26_63_44_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_26_63_44_4_stop" ]
+        %expiresAt.2 = local;
+        symbol [ expiresAt %expiresAt.2 34 12 21 ];
+        symbol [ Storage %tmp.13 34 24 31 ];
+        %tmp.13 = getm $.Toybox.Application.Storage;
+        symbol [ getValue %tmp.14 34 32 40 ];
+        %tmp.14 = getv function %tmp.13 :getValue;
+        symbol [ STORAGE_KEY_EXPIRES %tmp.16 34 41 60 ];
+        %tmp.16 = getv ? :STORAGE_KEY_EXPIRES;
+        %tmp.17 = invoke %tmp.13 %tmp.14(%tmp.16);
+        lputv %expiresAt.2 %tmp.17;
+        symbol [ expiresAt %expiresAt.2 34 12 21 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 35 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_8_41_8_if_stmt:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_12_35_54_begin:
+        %tmp.18 = lgetv %expiresAt.2;
+        symbol [ expiresAt %tmp.18 35 12 21 ];
+        %tmp.19 = null;
+        %tmp.20 = ne %tmp.18 %tmp.19;
+        bf %tmp.20 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_8_41_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_33_35_54_true:
+        %tmp.21 = lgetv %expiresAt.2;
+        symbol [ expiresAt %tmp.21 35 33 42 ];
+        %tmp.22 = as %tmp.21 { (!Null) };
+        symbol [ Number %tmp.24 35 54 60 ];
+        %tmp.24 = getv ? :Number;
+        %tmp.25 = isa %tmp.22 %tmp.24;
+        push %tmp.25;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_33_35_54_end:
+        %tmp.26 = phi [%tmp.20 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_12_35_54_begin] [%tmp.25 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_33_35_54_true] [%tmp.26 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_33_35_54_end];
+        bf %tmp.26 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_8_41_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_8_41_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_62_41_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 36 12 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_62_41_8_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_62_41_8_stop" ]
+        %now.3 = local;
+        symbol [ now %now.3 36 16 19 ];
+        symbol [ Time %tmp.27 36 22 26 ];
+        %tmp.27 = getm $.Toybox.Time;
+        symbol [ now %tmp.28 36 27 30 ];
+        %tmp.28 = getv function %tmp.27 :now;
+        %tmp.29 = invoke %tmp.27 %tmp.28();
+        symbol [ value %tmp.30 36 33 38 ];
+        %tmp.30 = getv function %tmp.29 :value;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        lputv %now.3 %tmp.31;
+        symbol [ now %now.3 36 16 19 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 37 12 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_37_12_40_12_if_stmt:
+        %tmp.32 = lgetv %expiresAt.2;
+        symbol [ expiresAt %tmp.32 37 17 26 ];
+        %tmp.33 = as %tmp.32 { (Number) && (!Null) };
+        %tmp.34 = as %tmp.33 Number;
+        symbol [ Number %tmp.34 37 30 36 ];
+        %tmp.35 = lgetv %now.3;
+        symbol [ now %tmp.35 37 40 43 ];
+        %tmp.36 = lt %tmp.34 %tmp.35;
+        bf %tmp.36 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_37_12_40_12_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_37_12_40_12_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_37_45_40_12_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 38 16 ]
+        symbol [ System %tmp.37 38 16 22 ];
+        %tmp.37 = getm $.Toybox.System;
+        symbol [ println %tmp.38 38 23 30 ];
+        %tmp.38 = getv function %tmp.37 :println;
+        %tmp.39 = "[ScanRx] Device token expired";
+        invoke %tmp.37 %tmp.38(%tmp.39);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 39 16 ]
+        %tmp.40 = null;
+        ret %tmp.40;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_37_45_40_12_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_37_12_40_12_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_37_12_40_12_if_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_62_41_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_8_41_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_35_8_41_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 43 8 ]
+        %tmp.41 = lgetv %token.1;
+        symbol [ token %tmp.41 43 15 20 ];
+        %tmp.42 = as %tmp.41 String;
+        symbol [ String %tmp.42 43 24 30 ];
+        ret %tmp.42;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_26_63_44_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 46; @symbol_functiondef = [deleteDeviceToken,46,27,44]; ]
+    public static
+    function deleteDeviceToken() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_46_55_50_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 47 8 ]
+        symbol [ Storage %tmp.1 47 8 15 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ deleteValue %tmp.2 47 16 27 ];
+        %tmp.2 = getv function %tmp.1 :deleteValue;
+        symbol [ STORAGE_KEY_TOKEN %tmp.4 47 28 45 ];
+        %tmp.4 = getv ? :STORAGE_KEY_TOKEN;
+        invoke %tmp.1 %tmp.2(%tmp.4);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 48 8 ]
+        symbol [ Storage %tmp.5 48 8 15 ];
+        %tmp.5 = getm $.Toybox.Application.Storage;
+        symbol [ deleteValue %tmp.6 48 16 27 ];
+        %tmp.6 = getv function %tmp.5 :deleteValue;
+        symbol [ STORAGE_KEY_EXPIRES %tmp.8 48 28 47 ];
+        %tmp.8 = getv ? :STORAGE_KEY_EXPIRES;
+        invoke %tmp.5 %tmp.6(%tmp.8);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 49 8 ]
+        symbol [ System %tmp.9 49 8 14 ];
+        %tmp.9 = getm $.Toybox.System;
+        symbol [ println %tmp.10 49 15 22 ];
+        %tmp.10 = getv function %tmp.9 :println;
+        %tmp.11 = "[ScanRx] Device token deleted";
+        invoke %tmp.9 %tmp.10(%tmp.11);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_46_55_50_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 52; @symbol_functiondef = [isTokenExpired,52,27,41]; @symbol_return<0> = [Boolean,52,47,54]; ]
+    public static
+    function isTokenExpired() as Boolean {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_52_55_64_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 53 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_52_55_64_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_52_55_64_4_stop" ]
+        %expiresAt.1 = local;
+        symbol [ expiresAt %expiresAt.1 53 12 21 ];
+        symbol [ Storage %tmp.1 53 24 31 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ getValue %tmp.2 53 32 40 ];
+        %tmp.2 = getv function %tmp.1 :getValue;
+        symbol [ STORAGE_KEY_EXPIRES %tmp.4 53 41 60 ];
+        %tmp.4 = getv ? :STORAGE_KEY_EXPIRES;
+        %tmp.5 = invoke %tmp.1 %tmp.2(%tmp.4);
+        lputv %expiresAt.1 %tmp.5;
+        symbol [ expiresAt %expiresAt.1 53 12 21 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 54 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_54_8_56_8_if_stmt:
+        %tmp.6 = lgetv %expiresAt.1;
+        symbol [ expiresAt %tmp.6 54 12 21 ];
+        %tmp.7 = null;
+        %tmp.8 = eq %tmp.6 %tmp.7;
+        bf %tmp.8 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_54_8_56_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_54_8_56_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_54_31_56_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 55 12 ]
+        %tmp.9 = true;
+        ret %tmp.9;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_54_31_56_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_54_8_56_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_54_8_56_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 58 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_8_61_8_if_stmt:
+        %tmp.10 = lgetv %expiresAt.1;
+        symbol [ expiresAt %tmp.10 58 12 21 ];
+        symbol [ Number %tmp.12 58 33 39 ];
+        %tmp.12 = getv ? :Number;
+        %tmp.13 = isa %tmp.10 %tmp.12;
+        bf %tmp.13 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_8_61_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_8_61_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_41_61_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 59 12 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_41_61_8_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_41_61_8_stop" ]
+        %now.2 = local;
+        symbol [ now %now.2 59 16 19 ];
+        symbol [ Time %tmp.14 59 22 26 ];
+        %tmp.14 = getm $.Toybox.Time;
+        symbol [ now %tmp.15 59 27 30 ];
+        %tmp.15 = getv function %tmp.14 :now;
+        %tmp.16 = invoke %tmp.14 %tmp.15();
+        symbol [ value %tmp.17 59 33 38 ];
+        %tmp.17 = getv function %tmp.16 :value;
+        %tmp.18 = invoke %tmp.16 %tmp.17();
+        lputv %now.2 %tmp.18;
+        symbol [ now %now.2 59 16 19 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 60 12 ]
+        %tmp.19 = lgetv %expiresAt.1;
+        symbol [ expiresAt %tmp.19 60 20 29 ];
+        %tmp.20 = as %tmp.19 { (Number) };
+        %tmp.21 = as %tmp.20 Number;
+        symbol [ Number %tmp.21 60 33 39 ];
+        %tmp.22 = lgetv %now.2;
+        symbol [ now %tmp.22 60 43 46 ];
+        %tmp.23 = lt %tmp.21 %tmp.22;
+        ret %tmp.23;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_41_61_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_8_61_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_58_8_61_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 63 8 ]
+        %tmp.24 = true;
+        ret %tmp.24;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_52_55_64_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 66; @symbol_functiondef = [cacheWorkout,66,27,39]; @symbol_param<0> = [workoutJson,66,40,51]; @symbol_param<0>_type<0> = [Dictionary,66,55,65]; ]
+    public static
+    function cacheWorkout(workoutJson as Dictionary) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_66_75_73_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 67 8 ]
+        try @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_beginTry @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_endTry @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_catch @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_finally;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_beginTry:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_12_70_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 68 12 ]
+        symbol [ Storage %tmp.1 68 12 19 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ setValue %tmp.2 68 20 28 ];
+        %tmp.2 = getv function %tmp.1 :setValue;
+        symbol [ STORAGE_KEY_CACHED_WORKOUT %tmp.4 68 29 55 ];
+        %tmp.4 = getv ? :STORAGE_KEY_CACHED_WORKOUT;
+        %tmp.5 = lgetv %workoutJson;
+        symbol [ workoutJson %tmp.5 68 57 68 ];
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.5);
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 69 12 ]
+        symbol [ System %tmp.6 69 12 18 ];
+        %tmp.6 = getm $.Toybox.System;
+        symbol [ println %tmp.7 69 19 26 ];
+        %tmp.7 = getv function %tmp.6 :println;
+        %tmp.8 = "[ScanRx] Workout cached";
+        invoke %tmp.6 %tmp.7(%tmp.8);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_12_70_8_stop:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_endTry:
+        jsr @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_finally;
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_catch:
+        %tmp.9 = exception;
+        push %tmp.9;
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 70 10 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_catch" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_70_10_72_8_end" ]
+        %ex.1 = local;
+        symbol [ ex %ex.1 70 17 19 ];
+        %tmp.10 = dup %tmp.9;
+        lputv %ex.1 %tmp.10;
+        symbol [ ex %ex.1 70 17 19 ];
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_70_21_72_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 71 12 ]
+        symbol [ System %tmp.11 71 12 18 ];
+        %tmp.11 = getm $.Toybox.System;
+        symbol [ println %tmp.12 71 19 26 ];
+        %tmp.12 = getv function %tmp.11 :println;
+        %tmp.13 = "[ScanRx] Failed to cache workout";
+        invoke %tmp.11 %tmp.12(%tmp.13);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_70_21_72_8_stop:
+        jsr @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_finally;
+        pop;
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_70_10_72_8_end:
+        try @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_catch @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_70_10_72_8_end @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_70_10_72_8_end @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_finally;
+        jsr @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_finally;
+        throw %tmp.9;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_finally:
+        jsrret;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_67_8_72_8_end:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_66_75_73_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 75; @symbol_functiondef = [getCachedWorkout,75,27,43]; @symbol_return<0> = [Dictionary,75,49,59]; ]
+    public static
+    function getCachedWorkout() as Dictionary or Null {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_75_68_81_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 76 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_75_68_81_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_75_68_81_4_stop" ]
+        %cached.1 = local;
+        symbol [ cached %cached.1 76 12 18 ];
+        symbol [ Storage %tmp.1 76 21 28 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ getValue %tmp.2 76 29 37 ];
+        %tmp.2 = getv function %tmp.1 :getValue;
+        symbol [ STORAGE_KEY_CACHED_WORKOUT %tmp.4 76 38 64 ];
+        %tmp.4 = getv ? :STORAGE_KEY_CACHED_WORKOUT;
+        %tmp.5 = invoke %tmp.1 %tmp.2(%tmp.4);
+        lputv %cached.1 %tmp.5;
+        symbol [ cached %cached.1 76 12 18 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 77 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_77_8_79_8_if_stmt:
+        %tmp.6 = lgetv %cached.1;
+        symbol [ cached %tmp.6 77 12 18 ];
+        symbol [ Dictionary %tmp.8 77 30 40 ];
+        %tmp.8 = getv ? :Dictionary;
+        %tmp.9 = isa %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_77_8_79_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_77_8_79_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_77_42_79_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 78 12 ]
+        %tmp.10 = lgetv %cached.1;
+        symbol [ cached %tmp.10 78 19 25 ];
+        %tmp.11 = as %tmp.10 { (Dictionary) };
+        %tmp.12 = as %tmp.11 Dictionary;
+        symbol [ Dictionary %tmp.12 78 29 39 ];
+        ret %tmp.12;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_77_42_79_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_77_8_79_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_77_8_79_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 80 8 ]
+        %tmp.13 = null;
+        ret %tmp.13;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_75_68_81_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 83; @symbol_functiondef = [saveDeviceId,83,27,39]; @symbol_param<0> = [deviceId,83,40,48]; @symbol_param<0>_type<0> = [String,83,52,58]; ]
+    public static
+    function saveDeviceId(deviceId as String) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_83_68_85_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 84 8 ]
+        symbol [ Storage %tmp.1 84 8 15 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ setValue %tmp.2 84 16 24 ];
+        %tmp.2 = getv function %tmp.1 :setValue;
+        symbol [ STORAGE_KEY_DEVICE_ID %tmp.4 84 25 46 ];
+        %tmp.4 = getv ? :STORAGE_KEY_DEVICE_ID;
+        %tmp.5 = lgetv %deviceId;
+        symbol [ deviceId %tmp.5 84 48 56 ];
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.5);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_83_68_85_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 87; @symbol_functiondef = [getDeviceId,87,27,38]; @symbol_return<0> = [String,87,44,50]; ]
+    public static
+    function getDeviceId() as String or Null {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_87_59_93_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 88 8 ]
+        [ "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_87_59_93_4_start" "_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_87_59_93_4_stop" ]
+        %id.1 = local;
+        symbol [ id %id.1 88 12 14 ];
+        symbol [ Storage %tmp.1 88 17 24 ];
+        %tmp.1 = getm $.Toybox.Application.Storage;
+        symbol [ getValue %tmp.2 88 25 33 ];
+        %tmp.2 = getv function %tmp.1 :getValue;
+        symbol [ STORAGE_KEY_DEVICE_ID %tmp.4 88 34 55 ];
+        %tmp.4 = getv ? :STORAGE_KEY_DEVICE_ID;
+        %tmp.5 = invoke %tmp.1 %tmp.2(%tmp.4);
+        lputv %id.1 %tmp.5;
+        symbol [ id %id.1 88 12 14 ];
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 89 8 ]
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_89_8_91_8_if_stmt:
+        %tmp.6 = lgetv %id.1;
+        symbol [ id %tmp.6 89 12 14 ];
+        symbol [ String %tmp.8 89 26 32 ];
+        %tmp.8 = getv ? :String;
+        %tmp.9 = isa %tmp.6 %tmp.8;
+        bf %tmp.9 @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_89_8_91_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_89_8_91_8_if_true:
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_89_34_91_8_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 90 12 ]
+        %tmp.10 = lgetv %id.1;
+        symbol [ id %tmp.10 90 19 21 ];
+        %tmp.11 = as %tmp.10 { (String) };
+        %tmp.12 = as %tmp.11 String;
+        symbol [ String %tmp.12 90 25 31 ];
+        ret %tmp.12;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_89_34_91_8_stop:
+        goto @_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_89_8_91_8_if_end;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_89_8_91_8_if_end:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc" 92 8 ]
+        %tmp.13 = null;
+        ret %tmp.13;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_StorageManager_mc_87_59_93_4_stop:
+    }
+}
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/StorageManager.mc"; @line = 5; ]
+<init> {
+}

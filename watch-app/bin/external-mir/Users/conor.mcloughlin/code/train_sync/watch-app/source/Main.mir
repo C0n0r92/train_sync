@@ -1,0 +1,98 @@
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 6; @symbol_importdef<0> = [Toybox,6,7,13]; @symbol_importdef<1> = [Application,6,14,25]; ]
+import Toybox.Application;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 7; @symbol_importdef<0> = [Toybox,7,7,13]; @symbol_importdef<1> = [Lang,7,14,18]; ]
+import Toybox.Lang;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 8; @symbol_importdef<0> = [Toybox,8,7,13]; @symbol_importdef<1> = [WatchUi,8,14,21]; ]
+import Toybox.WatchUi;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 9; @symbol_importdef<0> = [Toybox,9,7,13]; @symbol_importdef<1> = [System,9,14,20]; ]
+import Toybox.System;
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 12; @position = 4; @symbol_vardef = [API_URL,12,4,11]; ]
+var API_URL = "http://localhost:3000/api";
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 14; @symbol_classdef = [ScanRxApp,14,6,15]; @symbol_extends<0> = [Application,14,24,35]; @symbol_extends<1> = [AppBase,14,36,43]; ]
+class ScanRxApp extends Application.AppBase {
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 14; ]
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 14; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 16; @symbol_functiondef = [initialize,16,20,30]; ]
+    public
+    function initialize() as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_16_33_18_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" 17 8 ]
+        symbol [ AppBase %tmp.2 17 8 15 ];
+        %tmp.2 = getv ? :AppBase;
+        symbol [ initialize %tmp.3 17 16 26 ];
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_16_33_18_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 20; @symbol_functiondef = [onStart,20,20,27]; @symbol_param<0> = [state,20,28,33]; @symbol_param<0>_type<0> = [Dictionary,20,37,47]; ]
+    public
+    function onStart(state as Dictionary or Null) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_20_58_25_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" 24 8 ]
+        symbol [ System %tmp.1 24 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 24 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "[ScanRx] App started";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_20_58_25_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 27; @symbol_functiondef = [onStop,27,20,26]; @symbol_param<0> = [state,27,27,32]; @symbol_param<0>_type<0> = [Dictionary,27,36,46]; ]
+    public
+    function onStop(state as Dictionary or Null) as Void {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_27_57_31_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" 30 8 ]
+        symbol [ System %tmp.1 30 8 14 ];
+        %tmp.1 = getm $.Toybox.System;
+        symbol [ println %tmp.2 30 15 22 ];
+        %tmp.2 = getv function %tmp.1 :println;
+        %tmp.3 = "[ScanRx] App stopped";
+        invoke %tmp.1 %tmp.2(%tmp.3);
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_27_57_31_4_stop:
+    }
+    [ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 33; @symbol_functiondef = [getInitialView,33,20,34]; @symbol_return<0> = [Views,33,41,46]; @symbol_return<1> = [Views,33,52,57]; @symbol_return<2> = [InputDelegates,33,59,73]; ]
+    public
+    function getInitialView() as [Views] or [Views, InputDelegates] {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_33_75_37_4_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" 36 8 ]
+        %tmp.1 = newa 2;
+        symbol [ $ %tmp.5 36 20 21 ];
+        %tmp.5 = getm $;
+        symbol [ HomeView %tmp.6 36 22 30 ];
+        %tmp.6 = getv %tmp.5 :HomeView;
+        %tmp.2 = newc %tmp.6 ();
+        %tmp.7 = dup %tmp.1;
+        %tmp.8 = aputv %tmp.7 0 %tmp.2;
+        symbol [ $ %tmp.12 36 38 39 ];
+        %tmp.12 = getm $;
+        symbol [ HomeViewDelegate %tmp.13 36 40 56 ];
+        %tmp.13 = getv %tmp.12 :HomeViewDelegate;
+        %tmp.9 = newc %tmp.13 ();
+        %tmp.14 = dup %tmp.8;
+        %tmp.15 = aputv %tmp.14 1 %tmp.9;
+        ret %tmp.15;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_33_75_37_4_stop:
+    }
+}
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 41; @symbol_functiondef = [getApp,41,9,15]; @symbol_return<0> = [ScanRxApp,41,21,30]; ]
+function getApp() as ScanRxApp {
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_41_31_43_0_start:
+[ "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc" 42 4 ]
+    symbol [ Application %tmp.1 42 11 22 ];
+    %tmp.1 = getm $.Toybox.Application;
+    symbol [ getApp %tmp.2 42 23 29 ];
+    %tmp.2 = getv function %tmp.1 :getApp;
+    %tmp.3 = invoke %tmp.1 %tmp.2();
+    %tmp.4 = as %tmp.3 ScanRxApp;
+    symbol [ ScanRxApp %tmp.4 42 35 44 ];
+    ret %tmp.4;
+_Users_conor_mcloughlin_code_train_sync_watch_app_source_Main_mc_41_31_43_0_stop:
+}
+[ @file = "/Users/conor.mcloughlin/code/train_sync/watch-app/source/Main.mc"; @line = 6; ]
+<init> {
+}
