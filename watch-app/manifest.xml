@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest version="1.0">
+    <application>
+        <appName>ScanRx</appName>
+        <version>0.1.0</version>
+        <entry>Main</entry>
+        <permissions>
+            <permission>Communications</permission>
+            <permission>SensorHistory</permission>
+        </permissions>
+        <supports>
+            <device id="d2delta"/>
+            <device id="fenix5xplus"/>
+            <device id="fr745"/>
+            <device id="fr945"/>
+            <device id="fenix6"/>
+            <!-- Add more device types as needed -->
+        </supports>
+    </application>
+</manifest>
