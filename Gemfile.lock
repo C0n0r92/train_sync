@@ -146,7 +146,7 @@ GEM
     json-schema (6.2.0)
       addressable (~> 2.8)
       bigdecimal (>= 3.1, < 5)
-    jwt (2.10.2)
+    jwt (3.1.2)
       base64
     kamal (2.10.1)
       activesupport (>= 7.0)
@@ -415,7 +415,7 @@ DEPENDENCIES
   devise-jwt (~> 0.11)
   factory_bot_rails (~> 6.2)
   faker (~> 3.2)
-  jwt (~> 2.7)
+  jwt (~> 3.1)
   kamal
   pg (~> 1.1)
   puma (>= 5.0)
