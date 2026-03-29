@@ -17,7 +17,7 @@ gem "devise", "~> 4.9"
 gem "devise-jwt", "~> 0.11"
 
 # JWT for API tokens
-gem "jwt", "~> 2.7"
+gem "jwt", "~> 3.1"
 
 # QR Code generation
 gem "rqrcode", "~> 2.2"
